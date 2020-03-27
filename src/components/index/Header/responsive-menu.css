@@ -1,0 +1,29 @@
+.responsive-menu{
+    width: 70%;
+    height: 100vh;
+    background-color: brown;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.cancel-btn{
+    text-decoration: none;
+    font-size: 40px;
+    margin: 15px 20px;
+    color: black;
+}
+
+.responsive-links{
+    padding-top: 30px;
+}
+/* .responsive-links ul{text-decoration: none;} */
+.responsive-links ul li{
+    padding: 10px 0 10px 30px;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-weight: bolder;
+    border-top: 1px solid rgba(0,0,0,.7);
+}
