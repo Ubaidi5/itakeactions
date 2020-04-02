@@ -1,3 +1,5 @@
+run "npm install react-scripts --save" then "npm start"
+
 <<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
