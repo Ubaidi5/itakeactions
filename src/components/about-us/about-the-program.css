@@ -1,0 +1,39 @@
+.about-the-program{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.about-heading{
+    padding: 20px 0 10px 0;
+}
+
+#about-heading-divider{
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+.about-the-program p{
+    width: 80%;
+    margin: auto;
+    padding: 10px 0 10px 0;
+    text-align: left;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+
+@media only screen  and (max-width: 600px){
+    .about-the-program{
+        width: 100%;
+        text-align: center;
+    }
+    #vedio-frame{
+        width: 100%;
+        min-height: 250px;
+        max-height: 350px;
+    }
+
+
+}

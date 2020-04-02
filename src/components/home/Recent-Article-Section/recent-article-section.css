@@ -1,0 +1,47 @@
+.recent-article{
+    text-align: center;
+    width: 90%;
+    margin: auto;  
+}
+
+.recent-article-image{
+    display: flex;
+    color: white;
+    width: 100%;
+}
+
+.recent-article-image-left-section{
+    position: relative;
+    width: 50%;
+    background-image: url('./image1.jpg');
+    background-size: cover;
+    margin-right: 6px;
+}
+
+.recent-article-image-right-section{
+    width: 50%;
+}
+
+.upper-image-section{               /* Right side upper image section */
+    height: 30vh;
+    position: relative;
+    background-image: url('./image2.jpg');
+    background-size: cover;
+    margin-bottom: 5px;
+   
+}
+
+.lower-image-section{               /* Right side lower image section */
+    height: 30vh;
+    position: relative;
+    background-image: url('./image3.jpg');
+    background-size: cover;
+}
+
+.recent-article-image h2{
+    position: absolute;
+    left: 0;
+    bottom: 15%;
+    padding: 0 20px;
+    text-align: left;
+}

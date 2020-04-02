@@ -1,0 +1,76 @@
+.footer{
+    color: white;
+    height: 60vh;
+}
+
+.footer1{ height: 53vh; background-color: #057f16; display: flex; }
+
+/* Section 1 styling */
+
+.one{ flex: 40%; text-align: center; display: flex; justify-content: center; align-items: center;}
+.one img{ width: 200px;  }
+.one a{ color: white; text-decoration: none; margin: 10px;}
+
+/* Section 2 styling */
+
+.two{ flex: 30%; margin-top: 30px; line-height: 30px; }
+.two a{ color: white; text-decoration: none; display: block; line-height: 35px; }
+.subscribe{ margin-top: 8%; }
+.subscribe input{ padding: 8px; width: 280px; border: none; border-radius: 2px; }
+/*----- Go Button -----*/
+.go{ padding: 4px 10px; border: none; border-radius: 2px; outline: none; background-color: #60AB30; color: white; margin-left: -45px; cursor: pointer;}
+
+/* Section 3 styling */
+
+.three{ flex: 30%; margin-top: 30px; text-align: center;}
+/* .three b{ font-size: 29px; line-height: 50px; text-align: right; margin-right: 10px;}
+.three p{ text-align: left;} */
+.sec-3-wrapper{ display: flex; margin-top: 20px;}
+.sec-3-wrapper b{ display: block; text-align: right; margin-right: 10px; font-size: 30px; line-height: 45px;}
+.sec-3-wrapper p{ text-align: left; width: 200px; margin:10px 0 20px 0;}
+.numbers, .names{flex: 50%;}
+
+
+/* ------ Footer 2 styling------- */
+.footer2{ height: 7vh; background-color: #60AB30; display: flex; justify-content: center; align-items: center; }
+.footer2 a{ color: white; text-decoration: none; margin: 10px;}
+
+.ad{flex: 36%; text-align: center;}                     /*---- Tag Line ----*/
+
+.auth-link{flex: 32%; text-align: right;}               /*---- Links ----*/
+
+.follow-us{display: flex; justify-content: center; align-items: center;}        /*--- Social Links ---*/
+.follow{flex: 32%;}
+.fa-links a{ font-size: 20px; }
+.responsive-ad{display: none;}
+
+
+/* ----- Responsive Design ----- */
+
+@media only screen and (max-width: 600px){
+        
+        /* ----- Footer 1 ----- */
+
+    .footer1{display: block; height: auto;}
+    /* ----- section 1 ----- */
+    .one{ flex: 100%; text-align: center; padding-top: 20px;}
+    
+    /* ----- Section 2 ----- */
+    .two{ width: 70%; margin: auto; line-height: 30px; padding: 30px 0; }
+    .two a{ color: white; text-decoration: none; display: block; line-height: 35px; }
+
+    /* ---- Section 3 which is going to be disable ----- */
+    .three{ display: none;}
+
+        /* ----- Footer 2 ----- */
+    .footer2{height:auto; padding: 10px;}
+    .ad{display: none;}
+
+    .auth-link{flex: 50%; text-align: left; padding-left: 20px;}
+    .auth-link a{display: block;}
+
+    .follow-us p{display: none;}
+    .follow{flex: 50%;}
+
+    .responsive-ad{display: block; width: 100%; padding: 0px 0 30px 0; text-align: center; background-color: #60AB30;}
+}
