@@ -1,11 +1,11 @@
 /* * { overflow: hidden;} */
 .area-covering{width: 100%; height: 90px;}
-.header{ position: fixed; height: 90px; background-color: white; display: flex; justify-content: center; align-items: center; width: 100%; z-index: 100; border-bottom: 1px solid rgb(236, 213, 213);}
+.header{ position: fixed; height: inherit; background-color: white; display: flex; justify-content: center; align-items: center; width: 100%; z-index: 100; border-bottom: 1px solid rgb(236, 213, 213);}
 
 .res-menu-btn{display: none;}               /* <---- Menu button is disabled */
 
 .logo-image, .side-btn{ flex: 20%; text-align: center; }
-
+#profileBar{ flex: 25%;}
 .links{ flex: 60%; }
 
 /*                                            ^-- All four section width is defined*/
@@ -32,13 +32,16 @@
 
 /*--------------  Side btn Section  -----------*/
 
-.side-btn i{
+.fa-search{
     cursor: pointer;
     font-size: 25px;
     background: none;
     border: none;
+    margin: auto;
     color: rgb(57, 65, 65);
 }
+
+.fa-search:hover{transform: scale(1.1);}
 
 .login, .signup{
     margin-left: 10px;
