@@ -44,3 +44,9 @@
     font-size: 20px;
 }
 #logout{color:#60AB30}
+
+@media only screen and (max-width: 600px){
+    .profile-name div, .profile-name i{
+        display: none;
+    }
+}

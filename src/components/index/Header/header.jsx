@@ -34,11 +34,11 @@ class Header extends Component {
         let justTepmVar= <Login loginFunction = {this.loginhandler} />;
 
         if(this.state.sidebarStatus){
-            sidebar = <ResponsiveNavbar />
+            sidebar = <ResponsiveNavbar loginFunction = {this.loginhandler} />
             btnstyle= "fa fa-times"
         }
         if(this.state.Loggedin){
-            justTepmVar = <Profile logoutFunction = {this.logouthandler}/>
+            justTepmVar = <Profile logoutFunction = {this.logouthandler} responsiveStyle={this.state.sidebarStatus}/>
         }
             
 
@@ -110,20 +110,26 @@ class Profile extends Component {
             profileMenu=null
         }
 
+        let showWithSidebar = null;
+
+        // if(this.props.responsiveStyle){
+            showWithSidebar = <div className='profile'>                              
+                                <div className="profile-name">
+                                    <img src={require('./user.png')} alt="profile pic" id="profile-pic"/>
+                                    <div>
+                                        <h4 className="user-name">Charles Omofowan</h4>
+                                        <p style={{color:"#60AB30"}} className="coins-in-wallet">400 ActBit coins</p>
+                                    </div>  
+                                    <i class={profileMenuUpDownbutton} onClick={this.profileMenuHandler}></i>
+                                </div>
+                                {profileMenu}
+                            </div>
+                        // }
+
         return ( 
             <div id='profileBar' style={{display:'flex'}}>
                 <i className="fa fa-search"></i>
-                <div className='profile'>                              
-                    <div className="profile-name">
-                        <img src={require('./user.png')} alt="profile pic" id="profile-pic"/>
-                        <div>
-                            <h4 className="user-name">Charles Omofowan</h4>
-                            <p style={{color:"#60AB30"}} className="coins-in-wallet">400 ActBit coins</p>
-                        </div>  
-                        <i class={profileMenuUpDownbutton} onClick={this.profileMenuHandler}></i>
-                    </div>
-                    {profileMenu}
-                </div>
+                {showWithSidebar}
             </div>
          );
     }

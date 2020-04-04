@@ -15,7 +15,7 @@ class ResponsiveNavbar extends Component {
     {/* navbar */}
                             <Navbar />
    {/* Buttons */}
-                            <button className="btns"><span className='fas fa-sign-in-alt btn-icon'></span> LOGIN</button><br/>
+                            <button className="btns"><span className='fas fa-sign-in-alt btn-icon' onClick={this.props.loginFunction}></span> LOGIN</button><br/>
                             <button className="btns"><span className='fa fa-bars btn-icon'></span> SIGN UP</button>
   {/* Social Links */}
                             <div className="social-links">
