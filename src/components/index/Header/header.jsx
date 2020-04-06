@@ -74,8 +74,8 @@ function Login(props){
         return ( 
             <div className='side-btn'>                               
                 <i className="fa fa-search"></i>
-                <button className="login" onClick={props.loginFunction}>LOGIN</button>
-                <button className="signup">SIGN UP</button>
+                <a href="https://itakeactions.org/signin"><button className="login" onClick={props.loginFunction}>LOGIN</button></a>
+                <a href="https://itakeactions.org/signup"><button className="signup">SIGN UP</button></a>
             </div>
         );
     
@@ -92,7 +92,6 @@ class Profile extends Component {
     }
 
     // profileMenuHandler controls the display of profile menu
-
     profileMenuHandler(){
         this.setState({ profileMenuStatus: !this.state.profileMenuStatus})
     }

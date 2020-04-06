@@ -1,0 +1,44 @@
+.carousel-btns{padding-bottom: 80px;}
+.carouserl-track-button{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    color: white;
+}
+
+.carouserl-track-button:hover, .carouserl-track-button:focus{ background-color: #057f16;}
+.reward-cards{width: 80%; margin: auto;}
+.reward-cards-wrapper{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.individual-card{
+    width: 30%;
+    margin: 50px 0;
+    padding: 40px;
+}
+
+.view-btn{
+    margin-top: 10px;
+}
+
+.active{
+    background-color: #057f16;
+}
+
+
+@media only screen and (max-width: 600px){
+    .reward-cards-wrapper{
+        display: block;
+    }
+    .individual-card{width: 100%}
+}
