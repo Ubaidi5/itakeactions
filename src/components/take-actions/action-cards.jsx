@@ -7,13 +7,16 @@ class ActionCards extends Component {
     constructor(){
         super()
         this.state = { actionCardData: cardsData, initial: 1, final: 9}
-        this.carouselBtnHandler = this.carouselBtnHandler.bind(this)
+        // this.carouselBtnHandler = this.carouselBtnHandler.bind(this)
     }
     
-    carouselBtnHandler(valueI,valueF){
+    carouselBtnHandler = (valueI,valueF)=>{
         this.setState(prevState => {prevState.initial=valueI; prevState.final=valueF; return prevState})
     }
 
+    componentDidMount(){
+        document.title="Actions Page"
+    }
     render() { 
        
         const singleCard = this.state.actionCardData.map((cardItem) => {

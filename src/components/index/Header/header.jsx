@@ -1,149 +1,147 @@
-import React, { Component } from 'react';
-import './header.css'
-import logo from './logo-high-res.png' 
-import ResponsiveMenu from './responsive-menu';
-import Navbar from './navbar';
-import ResponsiveNavbar from '../../Responsive-Navbar/responsive-navbar';
-import './profile-menu.css'
+import React, { Component } from 'react'
+import logo from './logo-high-res.png'
+import { Link } from 'react-router-dom'
+import './Header.css'
 
 class Header extends Component {
-    constructor(){
-        super()
-        this.state = { sidebarStatus: false, Loggedin: false }
-
-        this.sidebarHandler = this.sidebarHandler.bind(this)
-        this.loginhandler = this.loginhandler.bind(this)
-        this.logouthandler = this.logouthandler.bind(this)
-    }
     
-    sidebarHandler(){
-        this.setState({sidebarStatus: !this.state.sidebarStatus})
+    state = {isLoggedin: false, sideMenuStatus: false }
+
+    sideMenuHandler = ()=> {
+        this.setState({sideMenuStatus: !this.state.sideMenuStatus})
     }
 
-    loginhandler(){
-        this.setState({Loggedin: true})
-    }
-    
-    logouthandler(){
-        this.setState({Loggedin: false})
+    signingHandler = () => {
+        this.setState({isLoggedin: !this.state.isLoggedin})
+        this.sideMenuHandler()
     }
 
     render() { 
-        let sidebar;
-        let btnstyle=" fa fa-bars"
-        let justTepmVar= <Login loginFunction = {this.loginhandler} />;
+        let displayStatus = {}
+        let menubuttons = 'fa fa-bars'
 
-        if(this.state.sidebarStatus){
-            sidebar = <ResponsiveNavbar loginFunction = {this.loginhandler} />
-            btnstyle= "fa fa-times"
-        }
-        if(this.state.Loggedin){
-            justTepmVar = <Profile logoutFunction = {this.logouthandler} responsiveStyle={this.state.sidebarStatus}/>
-        }
+            if(this.state.sideMenuStatus){
             
+                displayStatus.display = 'block'; 
+                menubuttons = 'fa fa-times'
+            } 
+            else{ displayStatus.display = 'none' }
 
-        return ( 
-            <div className="area-covering">
-                <div className="header">
-                    <div className="res-menu-btn">                           {/* First div --- menu button */}
-                        <a className={btnstyle} onClick={this.sidebarHandler}></a>
-                    </div>
-                    {sidebar}
-                    <div className="logo-image">                             {/* Second div --- Logo */}
-                        <a href="/"><img className="logo" src={logo} alt="iTakeAction"/></a>
-                    </div>
-                        
-                    <div className="links">                                  {/* Third div --- Links */}
-                        <Navbar />
-                    </div>
 
-                   {justTepmVar}
+// All components are here that are stored in variables
 
+
+        let sidebarButton = <div className="res-menu-btn">                  
+                                <a className={menubuttons} onClick={this.sideMenuHandler}></a>
+                            </div>
+
+        let iTakeActionLogo =  <div className="logo-image">                             
+                                <a href="/"><img className="logo" src={logo} alt="iTakeAction"/></a>
+                            </div>
+
+        let navigationBar =   <div className="links">
+                                <ul>
+                                    <Link id='Link' to="/take-action"><li>TAKE ACTIONS</li></Link>
+                                    <Link id='Link' to="/reward"><li>REWARD</li></Link>
+                                    <Link id='Link' to="/submit-a-report"><li>SUBMIT A REPORT</li></Link>
+                                    <Link id='Link' to="/blog"><li>BLOG</li></Link>
+                                    <Link id='Link' to="/about-us"><li>ABOUT US</li></Link>
+                                </ul>
+                            </div>
+        let searchBar = <div className="search-bar">
+                            <input className='null' id='search-box' type="text" width='200px' />
+                            <i className='fa fa-search' onClick={() => document.getElementById('search-box').classList.toggle('search-bar-input') }></i>
+                        </div>
+        let loginButtons = <div className='menu-style-btn' id='side-btn'>
+                            <a href="#"><button className="login" onClick={this.signingHandler}><i className="fa fa-sign-in"></i> LOGIN</button></a>
+                            <a href="#"><button className="signup"><i className="fa fa-user"></i> SIGN UP</button></a>
+                        </div>
+        let socialLinks = <div className="social-links">
+                            <a href="#" className="fa fa-facebook"></a>
+                            <a href="#" className="fa fa-instagram"></a>
+                            <a href="#" className="fa fa-twitter"></a>
+                            <a href="#" className="fa fa-youtube"></a>
+                        </div>
+        const userProfile = <Profile logout = {this.signingHandler}/>
+// What to Render
+        let doRender, ifReponsive;
+        if(this.state.isLoggedin){ 
+            doRender = userProfile
+            ifReponsive = userProfile
+            loginButtons =null
+        }
+        else{ 
+            doRender = loginButtons 
+        }
+
+        return (
+            <header style={{width:'100%', height:'90px'}}>
+{/* Web Layout */}
+                <div className="head web-layout">
+                    {iTakeActionLogo}
+                    {navigationBar}
+                    {searchBar}
+                    {doRender}
                 </div>
-                
-            </div>
+{/* Mobile Layout */}
+                <div className="head mobile-layout">
+                    {sidebarButton}
+                    {iTakeActionLogo}
+                    {searchBar}
+                    {ifReponsive}
+                    <div className="responsive-navigation-menu" style={displayStatus}>
+                        {navigationBar}
+                        {loginButtons}
+                        {socialLinks}
+                    </div>
+                </div>
+            </header>
          );
     }
 }
-
+ 
 export default Header;
 
-// Before Login
-
-function Login(props){
-        return ( 
-            <div className='side-btn'>                               
-                <i className="fa fa-search"></i>
-                <a href="https://itakeactions.org/signin"><button className="login" onClick={props.loginFunction}>LOGIN</button></a>
-                <a href="https://itakeactions.org/signup"><button className="signup">SIGN UP</button></a>
-            </div>
-        );
-    
-}
-
-// when user is logged in
 
 class Profile extends Component {
-
-    constructor(){
-        super()
-        this.state = {profileMenuStatus: false}
-        this.profileMenuHandler =this.profileMenuHandler.bind(this)
+    
+    state = {menuOn:false}
+    
+    showProfileMenuHandler = ()=>{
+            this.setState({menuOn: !this.state.menuOn})
     }
-
-    // profileMenuHandler controls the display of profile menu
-    profileMenuHandler(){
-        this.setState({ profileMenuStatus: !this.state.profileMenuStatus})
-    }
-
+    
     render() { 
-        let profileMenu;
-        let profileMenuUpDownbutton;
-
-        if(this.state.profileMenuStatus){
-            profileMenuUpDownbutton = "show-profile-menu-btn fa fa-chevron-up"
-            profileMenu = <ProfileMenu logout = {this.props.logoutFunction} />
+        let menuDisplay = {display:'none'}
+        let btnStyle = 'fa fa-chevron-down profile-menu-up-down-button'
+        
+        if(this.state.menuOn){
+            menuDisplay.display="block"
+            btnStyle = 'fa fa-chevron-up profile-menu-up-down-button'
         }
-        else{
-            profileMenuUpDownbutton = "show-profile-menu-btn fa fa-chevron-down"
-            profileMenu=null
-        }
-
-        let showWithSidebar = null;
-
-        // if(this.props.responsiveStyle){
-            showWithSidebar = <div className='profile'>                              
-                                <div className="profile-name">
-                                    <img src={require('./user.png')} alt="profile pic" id="profile-pic"/>
-                                    <div>
-                                        <h4 className="user-name">Charles Omofowan</h4>
-                                        <p style={{color:"#60AB30"}} className="coins-in-wallet">400 ActBit coins</p>
-                                    </div>  
-                                    <i class={profileMenuUpDownbutton} onClick={this.profileMenuHandler}></i>
-                                </div>
-                                {profileMenu}
-                            </div>
-                        // }
-
+        
         return ( 
-            <div id='profileBar' style={{display:'flex'}}>
-                <i className="fa fa-search"></i>
-                {showWithSidebar}
+            <div id='profileBar'>
+                <div className='profile'>                              
+                    <div className="profile-info" style={{display:'flex'}}>
+                        <img src={require('./user.png')} alt="profile pic" id="profile-pic"/>
+                        <div>
+                            <h4 className="user-name">Charles Omofowan</h4>
+                            <p style={{color:"#60AB30"}} className="coins-in-wallet">400 ActBit coins</p>
+                        </div>  
+                        <i className={btnStyle} onClick={this.showProfileMenuHandler}></i>
+                    </div>
+                    <div className="profile-menu" style={menuDisplay}>
+                        <ul className="menu-style-btn">
+                            <li><i className="fa fa-user"></i>My Profile</li>
+                            <li><i className="fa fa-money"></i>My Wallet</li>
+                            <li><i className="fa fa-gear"></i>Setting</li>
+                            <li><i className="fa fa-user-plus"></i>Invite Friends</li>
+                            <li id='logout' onClick={this.props.logout}><i class="fa fa-sign-out"></i>LOG OUT</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
          );
     }
-}
-
-function ProfileMenu(props){
-    return(
-        <div className="profile-menu">
-            <ul className="profile-menu-items">
-                <li><i class="fa fa-user"></i>My Profile</li>
-                <li><i class="fa fa-money"></i>My Wallet</li>
-                <li><i class="fa fa-gear"></i>Setting</li>
-                <li><i class="fa fa-user-plus"></i>Invite Friends</li>
-                <li id='logout' onClick={props.logout}><i class="fa fa-sign-out"></i>LOG OUT</li>
-            </ul>
-        </div>
-    )
 }
