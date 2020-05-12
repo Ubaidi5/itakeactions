@@ -1,0 +1,51 @@
+.section4{                     /* <--- First Main Div Section */
+    margin-top: 20px;
+    width: 90%;
+    margin: auto;
+    height: 80vh;
+    background-image: url("/assests/student.png");
+    background-size: cover;
+    background-position: center center;
+}
+
+.report-issue{                 /*  <---   Second div section conatin paragraph and button */
+    color: whitesmoke;
+    position: relative;
+    top: 30%;
+    left: 50%;
+    width: 550px;
+    padding: 30px;
+    font-weight: 600;
+    
+}
+.spacing{
+    margin-bottom: 15px;
+}
+
+.report-issue-btn{
+    width: 300px;
+    color: white;
+    background-color: #057f16;
+    border-radius: 4px; 
+    outline: none; 
+    height: 40px; 
+    border: none; 
+    letter-spacing: 1px; 
+    margin-left: 20%;
+}
+
+@media only screen and (max-width:600px){
+    
+    .section4{ width: 100%; }
+    .report-issue{
+        text-align: center;
+        width: 90%;
+        margin: auto;
+        top: 30%;
+        left: 0;
+        padding: 0;
+    }
+    .report-issue h1{ font-size: 25px; font-family: Arial, Helvetica, sans-serif; }
+    .report-issue p{width: 80%; margin: auto; margin-bottom: 20px;}
+    .report-issue-btn {margin: 0;}
+}
