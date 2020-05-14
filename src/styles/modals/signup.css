@@ -1,0 +1,74 @@
+.modalclose {
+  float: right;
+  margin-top: -25px;
+  margin-right: -25px;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid #aeaeae;
+  border-radius: 30px;
+  background: #605f61;
+  font-size: 25px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 0px;
+  padding: 10px 3px 14px 3px;
+}
+.modalclose:before {
+  content: "×";
+}
+.simple-line {
+  overflow: hidden;
+  text-align: center;
+}
+
+.simple-line:before,
+.simple-line:after {
+  background-color: #000;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.simple-line:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.simple-line:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+.signup-modal {
+    max-width: none;
+    width: 400px;
+    height: auto;
+}
+.signup-button {
+    background-color: #057f16;
+    color:white;
+    border:0;
+    padding:5px;
+    width:250px;
+    border-radius: 7px;
+}
+.links {
+    color: rgba(177, 198, 199, 0.795);
+    font-size: 13px;
+}
+.bottom-links {
+    color: inherit;
+    text-decoration: none;
+}
+.bottom-links:hover {
+    color: inherit;
+    text-decoration: none;
+}
+label {
+    font-size: 13px;
+}
+input {
+    box-shadow:3px 8px 6px #888888;
+}

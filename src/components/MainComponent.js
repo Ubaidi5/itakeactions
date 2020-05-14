@@ -13,6 +13,7 @@ import RewardsIndividualPage from './reward/rewards-individual/rewards-individua
 import ReportForm from './report/reward-form';
 import Report from './report/UnauthReport';
 import ReportSubmitted from './report/ReportSubmitted';
+import ResetPassword from './ResetPassword';
 
 class Main extends Component {
     constructor(props) {
@@ -32,6 +33,7 @@ class Main extends Component {
                     <Route path="/reward/rewards-individual" exact component={RewardsIndividualPage} />
                     <Route path="/submit-a-report" exact component={()=>this.state.authenticate?<ReportForm />:<Report />} />
                     <Route path="/report-submitted" exact component={ReportSubmitted} />
+                    <Route path="/reset-password" exact component={ResetPassword} />
                     <Route path="/about-us" exact component={AboutUs} />
                 </Switch>
                 <Footer />

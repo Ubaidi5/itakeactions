@@ -1,0 +1,63 @@
+.modalclose {
+  float: right;
+  margin-top: -25px;
+  margin-right: -25px;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid #aeaeae;
+  border-radius: 30px;
+  background: #605f61;
+  font-size: 25px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 0px;
+  padding: 10px 3px 14px 3px;
+}
+.modalclose:before {
+  content: "×";
+}
+.login-modal {
+  width: 350px;
+  max-width: none;
+  height: 500px;
+}
+.simple-line {
+  overflow: hidden;
+  text-align: center;
+}
+
+.simple-line:before,
+.simple-line:after {
+  background-color: #000;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.simple-line:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.simple-line:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+.inputs {
+    box-shadow:3px 8px 6px #888888;
+}
+.label-tag {
+    font-size: 15px;
+    margin:0;
+}
+.form-group {
+    margin-bottom: 0;
+}
+.links {
+    color:black;
+    font-size: 12px;
+    text-decoration: underline;
+}
