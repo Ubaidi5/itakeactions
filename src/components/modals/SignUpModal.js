@@ -11,7 +11,8 @@ class SignUp extends Component {
             lname:'',
             email:'',
             password:'',
-            retypePassword:''
+            retypePassword:'',
+            error:false
         }
     }
     handleInput(e) {
@@ -29,6 +30,8 @@ class SignUp extends Component {
                         <div style={{textAlign:'center'}}>
                             <h3><strong>Sign Up</strong></h3>
                             <p>And start tracking actions and claiming rewards!</p>
+                            {this.state.error && <p className="font-weight-bold text-danger mb-1" style={{fontSize:16}}><i className="fa fa-exclamation-triangle"></i> You are already a member</p>}
+                            {this.state.error && <p className="ml-3 mt-0 mb-4" style={{fontSize:12}}><Link className="text-decoration-none font-weight-bold mr-3" style={{color:"#057f16"}}>Log In</Link> Or <Link to='/reset-password' className="ml-3" style={{color:'black',textDecoration:'underline'}}>Forgot Password?</Link></p>}
                             <Link class="fb btn mb-3" style={{backgroundColor:"#3b5998", border:'1px solid #3b5998', color:'white'}}>
                                 <i class="fa fa-facebook fa-fw"></i> Facebook
                             </Link>
@@ -42,24 +45,24 @@ class SignUp extends Component {
                         <div className="form-row ml-3">
                             <div className='form-group col-sm-3 mb-1'>
                                 <label className="m-0">First Name</label>
-                                <input name='fname' required value={this.state.fname} onChange={this.handleInput.bind(this)} type="text" className='form-control' />
+                                <input name='fname' required value={this.state.fname} onChange={this.handleInput.bind(this)} type="text" className='form-control inputs' />
                             </div>
                             <div className='offset-sm-1 form-group col-sm-3 mb-1'>
                                 <label className="m-0">Last Name</label>
-                                <input name='lname' required value={this.state.lname} onChange={this.handleInput.bind(this)} type="text" className='form-control' />
+                                <input name='lname' required value={this.state.lname} onChange={this.handleInput.bind(this)} type="text" className='form-control inputs' />
                             </div>
                         </div>
                         <div className='form-group mb-1 col-sm-7 ml-2'>
                             <label className="m-0">E-mail</label>
-                            <input type='email' value={this.state.email} onChange={this.handleInput.bind(this)} name='email' required className='form-control' />
+                            <input type='email' value={this.state.email} onChange={this.handleInput.bind(this)} name='email' required className='form-control inputs' />
                         </div>
                         <div className='form-group mb-1 col-sm-7 ml-2'>
                             <label className="m-0">Password</label>
-                            <input type='password' value={this.state.password} onChange={this.handleInput.bind(this)} name='password' required className='form-control' />
+                            <input type='password' value={this.state.password} onChange={this.handleInput.bind(this)} name='password' required className='form-control inputs' />
                         </div>
-                        <div className='form-group col-sm-7 ml-2'>
+                        <div className='form-group col-sm-7 ml-2 mb-4'>
                             <label className="m-0">Retype Password</label>
-                            <input type='password' value={this.state.retypePassword} onChange={this.handleInput.bind(this)} name='retypePassword' required className='form-control' />
+                            <input type='password' value={this.state.retypePassword} onChange={this.handleInput.bind(this)} name='retypePassword' required className='form-control inputs' />
                         </div>
                     </form>
                     <div style={{textAlign:'center'}}>

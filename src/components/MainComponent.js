@@ -14,6 +14,8 @@ import ReportForm from './report/reward-form';
 import Report from './report/UnauthReport';
 import ReportSubmitted from './report/ReportSubmitted';
 import ResetPassword from './ResetPassword';
+import EmailUnlogged from './Unlogged/EmailUnlogged';
+import TwitterUnlogged from './Unlogged/TwitterUnlogged';
 
 class Main extends Component {
     constructor(props) {
@@ -34,6 +36,8 @@ class Main extends Component {
                     <Route path="/submit-a-report" exact component={()=>this.state.authenticate?<ReportForm />:<Report />} />
                     <Route path="/report-submitted" exact component={ReportSubmitted} />
                     <Route path="/reset-password" exact component={ResetPassword} />
+                    <Route path='/email-logged' component={EmailUnlogged} />
+                    <Route path='/twitter-logged' component={TwitterUnlogged} />
                     <Route path="/about-us" exact component={AboutUs} />
                 </Switch>
                 <Footer />

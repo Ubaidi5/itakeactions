@@ -5,11 +5,17 @@ import logo from './images/logo-high-res.png'
 import Navbar from './navbar';
 import { Link } from 'react-router-dom';
 import ResponsiveNavbar from './responsive-navbar';
+import Login from '../../modals/LoginModal';
+import SignUp from '../../modals/SignUpModal';
+import user from './images/user.png';
 
 class Header extends Component {
     constructor(){
         super()
         this.state = { sidebarStatus: false,
+            login:false,
+            signup:false,
+            authenticate:false,
         search:"" }
 
         this.sidebarHandler = this.sidebarHandler.bind(this)
@@ -42,7 +48,7 @@ class Header extends Component {
                         <Navbar />
                     </div>
                         
-                    <div className='side-btn'>
+                    <div className='side-btn row'>
                         <input id="search-input" name="search" type="text" placeholder="Search" value={this.state.search} onChange={(e)=>this.setState({search:e})} ref={(e)=>this._input = e} />                               {/* Fourth div --- Search area */}
                         <i className="fa fa-search" id="search-button" onClick={()=>{
                             if(this.state.search !== '') {
@@ -61,10 +67,21 @@ class Header extends Component {
                                 }
                             }
                     }}></i>
-                        <button className="login">LOGIN</button>
-                        <button className="signup">SIGN UP</button>
+                        {!this.state.authenticate && <div><button className="login" onClick={()=>this.setState({login:true})}>LOGIN</button>
+                        <button className="signup" onClick={()=>this.setState({signup:true})}>SIGN UP</button></div>}
+                        {this.state.authenticate && <div className="row ml-3">
+                            <div>
+                                <img src={user} alt="Profile" title="Profile" style={{width:'40px',height:'40px',borderRadius:'50%'}} />
+                            </div>
+                            <div className="ml-2" style={{textAlign:'left'}}>
+                                <p className="font-weight-bold mb-0">Charles Omofowan</p>
+                                <small className="font-weight-bold mt-0" style={{color:'#057f16'}}>4 ActBit Coins</small>
+                            </div>
+                        </div>}
                     </div>
                 </div>
+                <Login show={this.state.login} toggle={()=>{}}/>
+                <SignUp show={this.state.signup} toggle={()=>{}}/>
             </div>
          );
     }

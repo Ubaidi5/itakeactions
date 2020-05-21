@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "../../../styles/home/section5.css";
 import LatestAction from "./Latest-action-section/latest-action";
 import LatestReward from "./Latest-reward-section/latest-reward";

@@ -9,7 +9,8 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      rememberMe: false
+      rememberMe: false,
+      error:false
     };
   }
   handleInput(e) {
@@ -27,6 +28,7 @@ class Login extends Component {
             <div className='container'>
                 <div style={{textAlign:'center'}}>
                     <h5 className='mt-3' style={{color:'black'}}><strong>Login to your account</strong></h5>
+                    {this.state.error && <p className="font-weight-bold text-danger my-4" style={{fontSize:12}}><i className="fa fa-exclamation-triangle"></i> These credentials do not match our records</p>}
                     <p style={{fontSize:'12px'}}>Connect to social network</p>
                     <div className="row" style={{justifyContent:'center'}}>
                         <div className='mr-3'>
@@ -55,7 +57,7 @@ class Login extends Component {
                     <div className='row'>
                         <div className='form-group col-sm-3 mr-5'>
                             <div class="form-check">
-                                <input class="form-check-input" style={{marginTop:'7px'}} type="checkbox" checked={this.state.rememberMe} onChange={()=>this.setState({rememberMe:!this.state.rememberMe})} />
+                                <input class="form-check-input" style={{marginTop:'7px',boxShadow:'none'}} type="checkbox" checked={this.state.rememberMe} onChange={()=>this.setState({rememberMe:!this.state.rememberMe})} />
                                 <label class="form-check-label" style={{fontSize:'12px',margin:0}}>
                                     Remember me
                                 </label>

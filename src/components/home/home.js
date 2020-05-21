@@ -7,9 +7,10 @@ import Section5 from './section5/section5';
 import RecentArticle from './Recent-Article-Section/recent-article-section';
 import '../../styles/home/home.css';
 import Login from '../modals/LoginModal';
-// import SignUp from '../modals/SignUpModal';
+import SignUp from '../modals/SignUpModal';
 
 function Home() {
+    const [state, modifystate] = React.useState({login:false,signup:false});
     return ( 
         <div className="home">
             <Overview />
@@ -24,8 +25,6 @@ function Home() {
             <Section4 />
             <Section5 />
             <RecentArticle />
-            <Login show={true} toggle={()=>console.log('toggled')}/>
-            {/* <SignUp show={true} toggle={()=>console.log("toggled")}/> */}
         </div>
      );
 }

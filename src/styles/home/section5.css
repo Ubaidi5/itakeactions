@@ -41,7 +41,7 @@ hr{
 .icon-box, .image-box{
     text-align: center;
     font-weight: 600;
-    width: 30%;
+    max-width: 250px;
     margin: auto;
     padding: 15px;
     border: none;
