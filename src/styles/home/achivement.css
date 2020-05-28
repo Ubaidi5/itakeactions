@@ -18,12 +18,13 @@
 
 .achivement-component{ display: flex;}
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 1000px){
 
     .achivement-component{
-        width: 100%;
+        width: 90%;
         display: block;
     }
+
     .box{
         width: 90%;
         flex-direction: row;
@@ -31,11 +32,26 @@
         margin-bottom: 20px;
         height: auto;
     }
-    .number,.title{ display: flex; justify-content: center; align-items: center;}
-    .title{text-align: left; flex: 60%;}
-    .number{flex: 40%;}
 
+    .number,.title{ 
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+    }
+    
+    .title{
+        text-align: left;
+        flex: 60%;
+    }
 
+    .number{
+        flex: 70%;
+        font-weight: 400;
+    }
+
+    p.title{
+        font-weight: 400;
+    }
 
 }
 

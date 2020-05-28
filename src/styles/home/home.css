@@ -13,12 +13,14 @@
         top: -100px;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 1000px){
 
     .our-participation{
         width: 80%;
         font-size: 25px;
         line-height: 35px;
+        margin-top: 20px;
+        font-weight: 800;
     }
     .achive-1st-child{
         top: -35px;

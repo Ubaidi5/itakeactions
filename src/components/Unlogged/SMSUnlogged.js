@@ -1,29 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TakeActions from "./TakeActions";
-import '../../styles/Unlogged/TwitterUnlogged.css'
 
 function TwitterUnlogged(props) {
   const [state, modify] = React.useState({
       auth:false,
-      shared:true
+      shared:false
   });
   return (
     <>
       <div className="mt-5">
-        <div className="row mb-5 mobile-row-twitter">
-          <div className="offset-sm-1 col-sm-5 ipad-design">
+        <div className="row mb-5">
+          <div className="offset-sm-1 col-sm-5">
             <h3 className="font-weight-bold">
-                Share an article with the new governor of Ogun State, Prince Dr. Dapo Abiodun to help St. Paul Primary School
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+              fuga numquam eos porro rem.
             </h3>
-            <p
+            <div
               className="justify-text mb-4"
-              style={{ fontSize: 13, fontWeight: 500 }}
+              style={{ fontSize: 15, fontWeight: 600 }}
             >
-              According to Tracka,\"...pupils of St. Paul Primary School, a government-owned school in Ijokun community of Sagamu, Ogun State, are battling with the fate to learn under trees despite government's provision of N26 million to refurbish their classrooms...\" Read the full article here.<br />
-              As an active citizen, we call on you today to share this article with the new governor of Ogun State,Prince Dr. Dapo Abiodun. This should be among his priorities as the new governor because no child deserves to learn in this inhuman condition.
-            </p>
-            <div className="mobile-design-links">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+              accusantium voluptates quae dignissimos, asperiores doloribus
+              soluta delectus earum obcaecati, ipsa ea deserunt quidem quis
+              reprehenderit at tempora quisquam perspiciatis illo quasi
+              cupiditate fugit blanditiis illum!</p>
+              <p>Itaque fugit consequuntur ullam
+              doloremque repellat sit reprehenderit ipsum quo, laudantium
+              molestiae inventore. Hic amet est, dolorum soluta, laudantium
+              nihil modi ullam sed, doloribus rerum debitis enim vel voluptatem
+              nesciunt. Quasi, animi repellendus.</p>
+            </div>
             <Link className="text-decoration-none">
               <i
                 style={{
@@ -68,9 +75,8 @@ function TwitterUnlogged(props) {
                 className="ml-4 fa fa-linkedin fa-2x"
               ></i>
             </Link>
-            </div>
           </div>
-          <div className="col-sm-4 offset-sm-1 mobile-twitter-login ipad-design">
+          <div className="col-sm-4 offset-sm-1">
             <div
               className="p-4 font-weight-bold"
               style={{
@@ -79,7 +85,9 @@ function TwitterUnlogged(props) {
                 borderRadius: 18
               }}
             >
-              <p>Your Excellency @dabiodunMFR, please take a look at this article by @TrackaNG. Please add this to the list of schools to be refurbished as ypu have resumed office as @ogun_state governor. Thank you. <Link to='http://bit.ly/2PRsnA5' className='text-decoration-none' style={{color:'black'}}>http://bit.ly/2PRsnA5</Link></p>
+              <p>Hic amet est, dolorum soluta, laudantium
+              nihil modi ullam sed, doloribus rerum debitis enim vel voluptatem
+              nesciunt.</p>
             </div>
             <div className="mt-4" style={{ textAlign: "center" }}>
               {!(state.auth && state.shared) && <button
@@ -92,7 +100,7 @@ function TwitterUnlogged(props) {
                   height: "50px"
                 }}
               >
-                {(state.auth && !state.shared) ? 'SHARE TWEET' : 'LOGIN TO SHARE TWITTER'}
+                {(state.auth && !state.shared) ? 'SEND SMS' : 'LOGIN TO SEND SMS'}
               </button>}
               {(state.auth && state.shared) && <div>
                 <h4><strong>Thank you for taking this action!</strong></h4>

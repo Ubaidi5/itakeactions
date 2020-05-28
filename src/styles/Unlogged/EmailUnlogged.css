@@ -1,0 +1,51 @@
+@media only screen and (max-width: 1000px){
+    .font-weight-bold{
+        text-align: center;
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    p.justify-text{
+        text-align: center;
+        width: 70%;
+        margin: 20px auto;
+    }
+
+    .text-decoration-none{
+        margin: 2%;
+    }
+
+    .mobile-design-links{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .mobile-twitter-login{
+        margin: 20px auto;
+        position: static;
+        width: 70%;
+
+    }
+
+    .mt-4 .btn{
+        padding: 10px;
+    }
+
+    .mobile-row-twitter{
+        margin-right: -15px;
+        display: block;
+    }    
+    
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 768px) {
+    .ipad-design{
+        max-width: 80%;
+        height: auto;
+        margin: 50px auto;
+    }
+
+
+}

@@ -4,8 +4,8 @@ import '../../styles/home/section5.css';
 
 function TakeActions() {
   return (
-    <div className="row mb-4">
-      <div className="icon-box offset-sm-1 col-sm-3 bg-light">
+    <div className="row mb-4 take-action-ipad-design">
+      <div className="icon-box offset-sm-1 col-sm-3 bg-light actions">
         <img
           src={require("./images/tweet-icon-green.png")}
           alt=""
@@ -18,7 +18,7 @@ function TakeActions() {
         </p>
         <button className="btn tweet">TWEET NOW</button>
       </div>
-      <div className="icon-box offset-sm-1 col-sm-3 bg-light">
+      <div className="icon-box offset-sm-1 col-sm-3 bg-light actions">
         <img
           src={require("./images/petition-icon-green.png")}
           alt=""
@@ -31,7 +31,7 @@ function TakeActions() {
         </p>
         <button className="btn petition">SIGN PETITION</button>
       </div>
-      <div className="icon-box offset-sm-1 col-sm-3 bg-light">
+      <div className="icon-box offset-sm-1 col-sm-3 bg-light actions">
         <img
           src={require("./images/tweet-icon-green.png")}
           alt=""
@@ -44,7 +44,7 @@ function TakeActions() {
         </p>
         <button className="btn tweet">TWEET NOW</button>
       </div>
-      <div className="icon-box offset-sm-1 col-sm-3 bg-light">
+      <div className="icon-box offset-sm-1 col-sm-3 bg-light actions">
         <img
           src={require("./images/tweet-icon-green.png")}
           alt=""

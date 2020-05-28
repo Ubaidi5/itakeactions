@@ -1,0 +1,10 @@
+.donate-money {
+    background-color: #f2f0ed;
+    font-size: 16;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.donate-money-background {
+    background-color: #f2f0ed;
+}

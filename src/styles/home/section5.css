@@ -83,11 +83,20 @@ div.tweet-wrapper > div:nth-of-type(odd){
     padding: 0 10px;
 }
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width:1000px){
 
     .left-section{width: 100%;}
     .right-section{ display: none; }
     .box-wrapper{ display: block;}
-    .icon-box,.image-box{ width: 85%;}
+    .icon-box,.image-box{ 
+        width: 85%;
+        margin: 10px auto;
+    }
     
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 768px) {
+    .take-action-ipad-design{
+        display: block;
+    }
 }

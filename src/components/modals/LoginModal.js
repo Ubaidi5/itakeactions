@@ -32,12 +32,12 @@ class Login extends Component {
                     <p style={{fontSize:'12px'}}>Connect to social network</p>
                     <div className="row" style={{justifyContent:'center'}}>
                         <div className='mr-3'>
-                            <Link class="fb btn" style={{backgroundColor:"#3b5998", border:'1px solid #3b5998', color:'white'}}>
+                            <Link class="fb btn small-btn" style={{backgroundColor:"#3b5998", border:'1px solid #3b5998', color:'white'}}>
                                 <i class="fa fa-facebook fa-fw"></i> Facebook
                             </Link>  
                         </div>
                         <div>
-                            <Link class="google btn" style={{backgroundColor:"#db4a39", border:'1px solid #db4a39', color:'white'}}>
+                            <Link class="google btn small-btn" style={{backgroundColor:"#db4a39", border:'1px solid #db4a39', color:'white'}}>
                                 <i class="fa fa-google fa-fw"></i> Google
                             </Link>  
                         </div>

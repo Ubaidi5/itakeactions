@@ -74,3 +74,39 @@
 .article3 {
     background-image: url('/assests/image3.jpg');
 }
+
+
+@media only screen and (max-width:1000px){
+    ol.carousel-indicators{
+        bottom: -60px;
+    }
+
+    .carousel-indicators li{
+        background-color: black;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+    }
+
+    li.active{
+        background-color: #60ab30 !important;
+    }
+
+    .active{
+        background-color: white !important;
+    }
+
+    div.latest-action,div.latest-rewards,div.recent-article{
+        margin-top: 3rem;
+    }
+
+    div.latest-actions h1,div.latest-rewards h1,div.recent-article h1{
+        font-size: 1.5em;
+    }
+
+    hr{
+        height: 2px;
+    }
+
+    
+}

@@ -10,7 +10,7 @@ import Login from '../modals/LoginModal';
 import SignUp from '../modals/SignUpModal';
 
 function Home() {
-    const [state, modifystate] = React.useState({login:false,signup:false});
+    const [state, modifystate] = React.useState({login:true,signup:true});
     return ( 
         <div className="home">
             <Overview />

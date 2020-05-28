@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TakeActions from "./TakeActions";
+import '../../styles/Unlogged/EmailUnlogged.css'
 
 function EmailUnlogged(props) {
   const [auth, modify] = React.useState(false);
   return (
     <>
       <div className="mt-5">
-        <div className="row mb-5">
-          <div className="offset-sm-1 col-sm-5">
+        <div className="row mb-5 mobile-row-twitter">
+          <div className="offset-sm-1 col-sm-5 ipad-design">
             <h3 className="font-weight-bold">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
               fuga numquam eos porro rem.
@@ -31,6 +32,7 @@ function EmailUnlogged(props) {
               sapiente error quod ullam? Eligendi iure quis, eveniet
               necessitatibus debitis quidem explicabo.
             </p>
+            <div className="mobile-design-links">
             <Link className="text-decoration-none">
               <i
                 style={{
@@ -76,7 +78,8 @@ function EmailUnlogged(props) {
               ></i>
             </Link>
           </div>
-          <div className="col-sm-4 offset-sm-1">
+          </div>
+          <div className="col-sm-4 offset-sm-1 mobile-twitter-login ipad-design">
             <div
               className="p-4 font-weight-bold"
               style={{
@@ -135,7 +138,7 @@ function EmailUnlogged(props) {
         <div className='offset-sm-1 col-sm-10'>
             <h2 className="font-weight-bold">Take more Actions</h2>
             <br />
-            <TakeActions />
+            <TakeActions/>
         </div>
       </div>
     </>

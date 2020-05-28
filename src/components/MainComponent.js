@@ -16,6 +16,10 @@ import ReportSubmitted from './report/ReportSubmitted';
 import ResetPassword from './ResetPassword';
 import EmailUnlogged from './Unlogged/EmailUnlogged';
 import TwitterUnlogged from './Unlogged/TwitterUnlogged';
+import PetitionUnlogged from './Unlogged/PetitionUnlogged';
+import DonateUnlogged from './Unlogged/DonateUnlogged';
+import SMSUnlogged from './Unlogged/SMSUnlogged';
+import VoteUnlogged from './Unlogged/VoteUnlogged';
 
 class Main extends Component {
     constructor(props) {
@@ -37,7 +41,12 @@ class Main extends Component {
                     <Route path="/report-submitted" exact component={ReportSubmitted} />
                     <Route path="/reset-password" exact component={ResetPassword} />
                     <Route path='/email-logged' component={EmailUnlogged} />
+                    <Route path='/petition-logged' component={PetitionUnlogged} />
                     <Route path='/twitter-logged' component={TwitterUnlogged} />
+                    <Route path='/donate-logged' component={DonateUnlogged} />
+                    <Route path='/sms-logged' component={SMSUnlogged} />
+                    <Route path='/vote-logged' component={()=> <VoteUnlogged isopinion={false} />} />
+                    <Route path='/opinion-logged' component={()=> <VoteUnlogged isopinion={true} />} />
                     <Route path="/about-us" exact component={AboutUs} />
                 </Switch>
                 <Footer />
