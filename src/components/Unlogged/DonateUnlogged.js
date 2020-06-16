@@ -42,14 +42,14 @@ function DonateUnlogged(props) {
   return (
     <>
       <div className="mt-5">
-        <div className="row mb-5">
-          <div className="offset-sm-1 col-sm-5">
+        <div className="row mb-5 mobile-row-twitter">
+          <div className="offset-sm-1 col-sm-5 donation-main-section">
             <h3 className="font-weight-bold">
               Donate to help get chairs and desks for Zabeyidna Primary School
             </h3>
             <div
               className="justify-text mb-4"
-              style={{ fontSize: 15, fontWeight: 600 }}
+              style={{ fontSize: 15, fontWeight: 600, textAlign: "center", padding: "0px 20px" }}
             >
               <p>
                 The only primary school in Zabeyidna Community of Niger State
@@ -73,6 +73,7 @@ function DonateUnlogged(props) {
                 education for these children.
               </p>
             </div>
+            <div className="mobile-design-links">
             <Link className="text-decoration-none">
               <i
                 style={{
@@ -117,13 +118,15 @@ function DonateUnlogged(props) {
                 className="ml-4 fa fa-linkedin fa-2x"
               ></i>
             </Link>
+            </div>
           </div>
-          <div className="col-sm-4 offset-sm-1">
+          <div className="col-sm-4 offset-sm-1 donation-main-section" 
+               style={{marginTop: "40px"}}>
             <div className="text-center mb-4">
               <strong>Please select your donation amount:</strong>
             </div>
-            <div className="offset-sm-4">
-              <div className="row mb-4">
+            <div className="offset-sm-4 donations-flex">
+              <div className="row mb-4 donations">
                 <div
                   className={`p-3 mr-4 col-sm-3 text-center donate-money ${state.selectedDonations.opt1?'bg-success text-light':''}`}
                   data-donation="₦1000"
@@ -139,7 +142,7 @@ function DonateUnlogged(props) {
                   ₦3000
                 </div>
               </div>
-              <div className="row">
+              <div className="row donations">
                 <div
                   className={`p-3 mr-4 col-sm-3 text-center donate-money ${state.selectedDonations.opt3?'bg-success text-light':''}`}
                   data-donation="₦5000"

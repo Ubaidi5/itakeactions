@@ -47,8 +47,8 @@ class VoteUnlogged extends React.Component {
     return (
       <>
         <div className="mt-5">
-          <div className="row mb-5">
-            <div className="offset-sm-1 col-sm-5">
+          <div className="row mb-5 mobile-row-twitter">
+            <div className="offset-sm-1 col-sm-5 text-aligning ipad-design">
               <h3 className="font-weight-bold">
                 Vote recommendations for the new Minister of Education
               </h3>
@@ -115,7 +115,7 @@ class VoteUnlogged extends React.Component {
                 ></i>
               </Link>
             </div>
-            <div className="col-sm-4 offset-sm-1">
+            <div className="col-sm-4 offset-sm-1 ipad-design">
               <div
                 className={`${
                   this.props.isopinion ? "p-4" : "p-5"
@@ -155,8 +155,8 @@ class VoteUnlogged extends React.Component {
     return (
       <div>
         <div className="mb-3">
-          <div className="row">
-            <div className="col-sm-1 mt-2">
+          <div className="row ipad-options-design">
+            <div className="col-sm-1 mt-2 ipad-bullets-design">
               <div
                 className={`radio-button ${
                   this.state.selectedOptions.opt1 ? "bg-success" : ""
@@ -178,8 +178,8 @@ class VoteUnlogged extends React.Component {
           </div>}
         </div>
         <div className="mb-3">
-          <div className="row">
-            <div className="col-sm-1 mt-2">
+          <div className="row ipad-options-design">
+            <div className="col-sm-1 mt-2 ipad-bullets-design">
               <div
                 className={`radio-button ${
                   this.state.selectedOptions.opt2 ? "bg-success" : ""
@@ -201,8 +201,8 @@ class VoteUnlogged extends React.Component {
           </div>}
         </div>
         <div>
-          <div className="row">
-            <div className="col-sm-1 mt-2">
+          <div className="row ipad-options-design">
+            <div className="col-sm-1 mt-2 ipad-bullets-design">
               <div
                 className={`radio-button ${
                   this.state.selectedOptions.opt3 ? "bg-success" : ""
@@ -274,7 +274,7 @@ class VoteUnlogged extends React.Component {
           <textarea
             rows={6}
             style={{ width: "440px" }}
-            className="form-control"
+            className="form-control textarea-mobile-design"
             value={this.state.opinion}
             onChange={e => this.setState({ opinion: e.target.value })}
           />

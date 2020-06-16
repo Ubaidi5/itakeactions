@@ -10,15 +10,15 @@ function EmailUnlogged(props) {
   return (
     <>
       <div className="mt-5">
-        <div className="row mb-5">
-          <div className="offset-sm-1 col-sm-5">
+        <div className="row mb-5 mobile-row-twitter">
+          <div className="offset-sm-1 col-sm-5 ipad-design">
             <h3 className="font-weight-bold">
               Petition Niger State Governor to provide conducive learning
               environment for Zabeyidna Community Primary School children
             </h3>
             <div
               className="justify-text mb-4"
-              style={{ fontSize: 15, fontWeight: 600 }}
+              style={{ fontSize: 15, fontWeight: 600, textAlign: "center", padding: "0px 20px" }}
             >
               <p>
                 The only school in Zabeyidna Community was established in 1992
@@ -45,6 +45,7 @@ function EmailUnlogged(props) {
                 governmentand other relevant stakeholders.
               </p>
             </div>
+            <div className="mobile-design-links">
             <Link className="text-decoration-none">
               <i
                 style={{
@@ -90,7 +91,8 @@ function EmailUnlogged(props) {
               ></i>
             </Link>
           </div>
-          <div className="col-sm-4 offset-sm-1">
+          </div>
+          <div className="col-sm-4 offset-sm-1 mobile-twitter-login ipad-design">
             <div
               className="p-4 font-weight-bold"
               style={{

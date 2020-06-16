@@ -11,3 +11,33 @@
     margin-top: -5px;
     margin-left: -10px;
 }
+
+@media only screen and (max-width: 1000px){
+    .textarea-mobile-design{
+        width: 100% !important;
+        margin: 10px;
+        height: 300px !important;
+    }
+
+    .ipad-options-design{
+        flex-wrap: unset !important;
+    }
+
+    .ipad-bullets-design{
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 768px){
+    .ipad-design {
+        max-width: 80%;
+        height: auto;
+        margin: 50px auto;
+    }
+
+    .textarea-mobile-design{
+        width: 80% !important;
+        height: 400px !important;
+    }
+
+}
