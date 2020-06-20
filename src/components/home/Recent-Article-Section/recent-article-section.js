@@ -66,8 +66,8 @@ class RecentArticle extends Component {
       </Carousel>
       <br />
       <br />
-      <div style={{position:"absolute",transform:'transform(-50%,0)',left:'50%'}}>
-        <i className="fas fa-chevron-circle-up" title="Go to top" onClick={()=>{window.scrollTo(0, 0);}}></i>
+      <div style={{position:"relative",height:"10em"}}>
+          <i className='fas fa-chevron-circle-up up-button-tablet-design' title="Go to top" onClick={()=>{window.scrollTo(0, 0);}} style={{position:"absolute", cursor: "pointer",top:"20%",left:"43%",display:"inline-block",margin:"10px auto",fontSize:"48px",borderRadius:"50%",border:"2px solid black",backgroundColor:"black",color:"white"}}></i>
       </div>
       </div>
     );

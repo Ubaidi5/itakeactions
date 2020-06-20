@@ -92,6 +92,23 @@ div.tweet-wrapper > div:nth-of-type(odd){
         width: 85%;
         margin: 10px auto;
     }
+
+    .my-left{
+        margin-left: 0;
+    }
+
+    .more-actions-button{
+        display: block;
+        margin: 45px auto !important;
+        width: 80%;
+        border: none;
+        color: white;
+        height: 50px;
+        font-weight: 400;
+        background-color: #057f16;
+    }
+
+    
     
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import MediaQuery from 'react-responsive';
 import TakeActions from "./TakeActions";
 
 function EmailUnlogged(props) {
@@ -167,11 +168,18 @@ function EmailUnlogged(props) {
           </div>
         </div>
       </div>
-      <div className="py-5" style={{ backgroundColor: "#d4d4d4" }}>
+      <div className="py-5 takeactions-mobile-design" style={{ backgroundColor: "#d4d4d4" }}>
         <div className="offset-sm-1 col-sm-10">
           <h2 className="font-weight-bold">Take more Actions</h2>
           <br />
           <TakeActions />
+
+          <MediaQuery maxDeviceWidth={1000}>
+              <button className="more-actions-button mt-4 btn">SEE MORE ACTIONS</button>
+              <div style={{position:"relative",height:"10em"}}>
+              <i className='fas fa-chevron-circle-up up-button-tablet-design'  title="Go to top" onClick={()=>{window.scrollTo(0, 0);}} style={{position:"absolute",cursor: "pointer",top:"20%",left:"43%",display:"inline-block",margin:"10px auto",fontSize:"48px",borderRadius:"50%",border:"2px solid black",backgroundColor:"black",color:"white"}}></i>
+              </div>
+            </MediaQuery>
         </div>
       </div>
     </>

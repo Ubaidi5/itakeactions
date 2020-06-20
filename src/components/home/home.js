@@ -5,6 +5,7 @@ import Section3 from './section3/section3';
 import Section4 from './section4/secion4'
 import Section5 from './section5/section5';
 import RecentArticle from './Recent-Article-Section/recent-article-section';
+import MediaQuery from 'react-responsive';
 import '../../styles/home/home.css';
 import Login from '../modals/LoginModal';
 import SignUp from '../modals/SignUpModal';

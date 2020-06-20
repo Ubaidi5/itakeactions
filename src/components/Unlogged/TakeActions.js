@@ -4,7 +4,7 @@ import '../../styles/home/section5.css';
 
 function TakeActions() {
   return (
-    <div className="row mb-4 take-action-ipad-design">
+    <div className="row mb-4 take-action-ipad-design my-left">
       <div className="icon-box offset-sm-1 col-sm-3 bg-light actions">
         <img
           src={require("./images/tweet-icon-green.png")}
