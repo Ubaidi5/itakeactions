@@ -3,6 +3,8 @@ import "../../../styles/home/section5.css";
 import LatestAction from "./Latest-action-section/latest-action";
 import LatestReward from "./Latest-reward-section/latest-reward";
 import TweetSection from "./Tweet-section/tweet-section";
+
+
 function Section5() {
   return (
     <div className="section5">

@@ -9,8 +9,8 @@ class VoteUnlogged extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      auth: false,
-      voted: false,
+      auth: true,
+      voted: true,
       opinionSubmitted: false,
       opinion: "",
       selectedOptions: {
@@ -45,6 +45,16 @@ class VoteUnlogged extends React.Component {
   }
 
   render() {
+    function myFunc(e){
+      e.preventDefault();
+      var l = document.getElementsByClassName("rest-actions").length;
+      var i = 0;
+      while(i < l){
+        document.getElementsByClassName("rest-actions")[i].style.display = "block";
+        i++;
+      }
+    }
+
     return (
       <>
         <div className="mt-5">
@@ -71,6 +81,7 @@ class VoteUnlogged extends React.Component {
                   the new minister. Thank You!
                 </p>
               </div>
+              <div className="mobile-design-links">
               <Link className="text-decoration-none">
                 <i
                   style={{
@@ -115,6 +126,7 @@ class VoteUnlogged extends React.Component {
                   className="ml-4 fa fa-linkedin fa-2x"
                 ></i>
               </Link>
+              </div>
             </div>
             <div className="col-sm-4 offset-sm-1 ipad-design">
               <div
@@ -148,7 +160,7 @@ class VoteUnlogged extends React.Component {
             <TakeActions />
 
             <MediaQuery maxDeviceWidth={1000}>
-              <button className="more-actions-button mt-4 btn">SEE MORE ACTIONS</button>
+              <button className="more-actions-button mt-4 btn" onClick={myFunc}>SEE MORE ACTIONS</button>
               <div style={{position:"relative",height:"10em"}}>
               <i className='fas fa-chevron-circle-up up-button-tablet-design' title="Go to top" onClick={()=>{window.scrollTo(0, 0);}} style={{position:"absolute",cursor: "pointer",top:"20%",left:"43%",display:"inline-block",margin:"10px auto",fontSize:"48px",borderRadius:"50%",border:"2px solid black",backgroundColor:"black",color:"white"}}></i>
               </div>
@@ -182,7 +194,7 @@ class VoteUnlogged extends React.Component {
             <div className="offset-sm-1 col-sm-10">
               <ProgressBar now={20} className="vote-bar" variant="success" />
             </div>
-            <div className="col-sm-1 percentage-label">20%</div>
+            <div className="col-sm percentage-label">20%</div>
           </div>}
         </div>
         <div className="mb-3">
@@ -245,7 +257,7 @@ class VoteUnlogged extends React.Component {
               backgroundColor: "yellow",
               border: "none",
               color: "black",
-              width: "250px",
+              width: "230px",
               height: "50px"
             }}
           >
@@ -259,10 +271,10 @@ class VoteUnlogged extends React.Component {
             </h4>
             <p
               style={{
-                color: "#66ff6b",
                 fontSize: 19,
                 fontWeight: 500
               }}
+              className="text-success"
             >
               You have earned 3 ActBit Coins
             </p>
@@ -301,7 +313,7 @@ class VoteUnlogged extends React.Component {
               backgroundColor: "yellow",
               border: "none",
               color: "black",
-              width: "250px",
+              width: "230px",
               height: "50px"
             }}
           >

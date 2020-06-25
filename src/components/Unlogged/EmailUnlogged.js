@@ -6,6 +6,17 @@ import '../../styles/Unlogged/EmailUnlogged.css'
 
 function EmailUnlogged(props) {
   const [auth, modify] = React.useState(false);
+
+  function myFunc(e){
+    e.preventDefault();
+    var l = document.getElementsByClassName("rest-actions").length;
+    var i = 0;
+    while(i < l){
+      document.getElementsByClassName("rest-actions")[i].style.display = "block";
+      i++;
+    }
+  }
+
   return (
     <>
       <div className="mt-5">
@@ -117,7 +128,7 @@ function EmailUnlogged(props) {
                   backgroundColor: "yellow",
                   border: "none",
                   color: "black",
-                  width: "250px",
+                  width: "230px",
                   height: "50px"
                 }}
               >
@@ -142,7 +153,7 @@ function EmailUnlogged(props) {
             <TakeActions/>
 
             <MediaQuery maxDeviceWidth={1000}>
-              <button className="more-actions-button mt-4 btn">SEE MORE ACTIONS</button>
+              <button className="more-actions-button mt-4 btn" onClick={myFunc}>SEE MORE ACTIONS</button>
               <div style={{position:"relative",height:"10em"}}>
               <i className='fas fa-chevron-circle-up up-button-tablet-design'  title="Go to top" onClick={()=>{window.scrollTo(0, 0);}} style={{position:"absolute",cursor: "pointer",top:"20%",left:"43%",display:"inline-block",margin:"10px auto",fontSize:"48px",borderRadius:"50%",border:"2px solid black",backgroundColor:"black",color:"white"}}></i>
               </div>

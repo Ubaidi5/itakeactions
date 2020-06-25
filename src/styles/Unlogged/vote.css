@@ -15,29 +15,22 @@
 @media only screen and (max-width: 1000px){
     .textarea-mobile-design{
         width: 100% !important;
-        margin: 10px;
+        margin: 10px auto;
         height: 300px !important;
     }
 
     .ipad-options-design{
         flex-wrap: unset !important;
+        text-align: left !important;
     }
 
     .ipad-bullets-design{
         width: auto;
     }
-}
-
-@media only screen and (max-width: 1000px) and (min-width: 768px){
     .ipad-design {
         max-width: 80%;
         height: auto;
         margin: 50px auto;
-    }
-
-    .textarea-mobile-design{
-        width: 80% !important;
-        height: 400px !important;
     }
     
     .up-button-tablet-design{
@@ -45,4 +38,37 @@
 
     }
 
+    .m-0{
+        margin: auto !important;
+    }
+
+    form.m-0{
+        width: 100%;
+    }
 }
+
+@media only screen and (max-width: 1000px) and (min-width:768px){
+    .textarea-mobile-design{
+        width: 90% !important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .vote-bar {
+        width: calc(100% - 50px);
+        margin-left: 47px;
+    }
+    .percentage-label  {
+        width: 10px;
+        margin-top: -15px;
+        margin-left: calc(100% - 50px + 25px);
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .up-button-tablet-design{
+        left: 43% !important;
+    }
+
+}
+

@@ -1,0 +1,8 @@
+@media only screen and (min-width: 450px) and(max-width: 1000px){
+p.justify-text {
+    display: none;
+    text-align: center !important;
+    width: 70% !important;
+    margin: 20px auto !important;
+}
+}

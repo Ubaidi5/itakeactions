@@ -100,7 +100,7 @@ div.tweet-wrapper > div:nth-of-type(odd){
     .more-actions-button{
         display: block;
         margin: 45px auto !important;
-        width: 80%;
+        width: 60%;
         border: none;
         color: white;
         height: 50px;
@@ -116,4 +116,19 @@ div.tweet-wrapper > div:nth-of-type(odd){
     .take-action-ipad-design{
         display: block;
     }
+}
+
+
+@media only screen and (max-width:1000px){
+  .take-more-action-mobile-design{
+      display: block;
+}
+  
+   .first-action{
+       display: block;
+}
+
+   .rest-actions{
+       display: none;
+}
 }

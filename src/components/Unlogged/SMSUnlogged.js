@@ -1,22 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TakeActions from "./TakeActions";
+import MediaQuery from 'react-responsive';
+import '../../styles/Unlogged/EmailUnlogged.css';
 
 function TwitterUnlogged(props) {
   const [state, modify] = React.useState({
       auth:false,
       shared:false
   });
+  function myFunc(e){
+    e.preventDefault();
+    var l = document.getElementsByClassName("rest-actions").length;
+    var i = 0;
+    while(i < l){
+      document.getElementsByClassName("rest-actions")[i].style.display = "block";
+      i++;
+    }
+  }
   return (
     <>
       <div className="mt-5">
-        <div className="row mb-5">
-          <div className="offset-sm-1 col-sm-5">
+        <div className="row mb-5 mobile-row-twitter">
+          <div className="offset-sm-1 col-sm-5 ipad-design">
             <h3 className="font-weight-bold">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
               fuga numquam eos porro rem.
             </h3>
-            <div
+            <p
               className="justify-text mb-4"
               style={{ fontSize: 15, fontWeight: 600 }}
             >
@@ -30,7 +41,8 @@ function TwitterUnlogged(props) {
               molestiae inventore. Hic amet est, dolorum soluta, laudantium
               nihil modi ullam sed, doloribus rerum debitis enim vel voluptatem
               nesciunt. Quasi, animi repellendus.</p>
-            </div>
+            </p>
+            <div className="mobile-design-links">
             <Link className="text-decoration-none">
               <i
                 style={{
@@ -75,8 +87,9 @@ function TwitterUnlogged(props) {
                 className="ml-4 fa fa-linkedin fa-2x"
               ></i>
             </Link>
+            </div>
           </div>
-          <div className="col-sm-4 offset-sm-1">
+          <div className="col-sm-4 offset-sm-1 mobile-twitter-login ipad-design">
             <div
               className="p-4 font-weight-bold"
               style={{
@@ -96,7 +109,7 @@ function TwitterUnlogged(props) {
                   backgroundColor: "yellow",
                   border: "none",
                   color: "black",
-                  width: "250px",
+                  width: "230px",
                   height: "50px"
                 }}
               >
@@ -112,13 +125,20 @@ function TwitterUnlogged(props) {
         </div>
       </div>
       <div
-        className="py-5"
+        className="py-5 takeactions-mobile-design"
         style={{ backgroundColor: "#d4d4d4" }}
       >
         <div className='offset-sm-1 col-sm-10'>
             <h2 className="font-weight-bold">Take more Actions</h2>
             <br />
             <TakeActions />
+
+            <MediaQuery maxDeviceWidth={1000}>
+              <button className="more-actions-button mt-4 btn" onClick={myFunc}>SEE MORE ACTIONS</button>
+              <div style={{position:"relative",height:"10em"}}>
+              <i className='fas fa-chevron-circle-up up-button-tablet-design'  title="Go to top" onClick={()=>{window.scrollTo(0, 0);}} style={{position:"absolute",cursor: "pointer", top:"20%",left:"43%",display:"inline-block",margin:"10px auto",fontSize:"48px",borderRadius:"50%",border:"2px solid black",backgroundColor:"black",color:"white"}}></i>
+              </div>
+            </MediaQuery>
         </div>
       </div>
     </>
