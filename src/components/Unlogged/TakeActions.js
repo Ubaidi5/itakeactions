@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import '../../styles/home/section5.css';
 
-function TakeActions() {
+function TakeActions(props) {
   return (
     <div className="row mb-4 take-action-ipad-design my-left take-more-action-mobile-design">
       <div className="icon-box offset-sm-1 col-sm-3 bg-light actions first-action">
@@ -44,7 +44,7 @@ function TakeActions() {
         </p>
         <button className="btn tweet">TWEET NOW</button>
       </div>
-      <div className="icon-box offset-sm-1 col-sm-3 bg-light actions rest-actions">
+      {!props.display && <div className="icon-box offset-sm-1 col-sm-3 bg-light actions rest-actions">
         <img
           src={require("./images/tweet-icon-green.png")}
           alt=""
@@ -56,7 +56,7 @@ function TakeActions() {
           to... <Link>Read more</Link>
         </p>
         <button className="btn tweet">TWEET NOW</button>
-      </div>
+      </div>}
     </div>
   );
 }

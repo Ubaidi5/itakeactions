@@ -17,31 +17,31 @@ class RewardsIndividualPage extends Component {
                 </div>
                 
                 <div className='tweet-section'>
-                    <h2>Earn more ActBit Coins</h2>
+                    <h4>Earn more ActBit Coins</h4>
                     <hr/><br/>
                     <div className="tweet-box-wrapper">
                                 <div className="tweet-icon-box">
                                     <img src={tweetIcon} alt="" className="icon"/>
-                                    <h3>Tweet</h3>
-                                    <p>Thank president Muhammadu Buhari for deducting from Paris Club Refund to... <a href="#">Read more</a></p>
+                                    <h5><strong style={{color:'black'}}>Tweet</strong></h5>
+                                    <p>Thank president Muhammadu Buhari for deducting from Paris Club Refund to... <a href="#" className='text-success'>Read more</a></p>
                                     <button className="tweet-card-btn">TWEET NOW</button>
                                 </div>
                                 <div className="tweet-icon-box">
                                     <img src={petetionIcon} alt="" className="icon"/>
-                                    <h3>Petition</h3>
-                                    <p>petitioning Niger State Governor to provide conducive learning environment... <a href="#">Read more</a></p>
+                                    <h5><strong style={{color:'black'}}>Petition</strong></h5>
+                                    <p>petitioning Niger State Governor to provide conducive learning environment... <a href="#" className='text-success'>Read more</a></p>
                                     <button className="tweet-card-btn">SIGN PETITION</button>
                                 </div>
                                 <div className="tweet-icon-box">
                                     <img src={tweetIcon} alt="" className="icon"/>
-                                    <h3>Tweet</h3>
-                                    <p>Tell the leaderdhip of the National Assembly to urge all members to prioritize... <a href="#">Read more</a></p>
+                                    <h5><strong style={{color:'black'}}>Tweet</strong></h5>
+                                    <p>Tell the leaderdhip of the National Assembly to urge all members to prioritize... <a href="#" className='text-success'>Read more</a></p>
                                     <button className="tweet-card-btn">TWEET NOW</button>
                                 </div>
                             </div>
                         <a href="#" id='more-action-btn'>SEE MORE ACTIONS</a>
                 </div>
-                <a href="#t" id='goto-top'>TOP</a>
+                <a href="#" id='goto-top'>TOP</a>
             </div>
          );
     }

@@ -9,8 +9,8 @@ class VoteUnlogged extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      auth: true,
-      voted: true,
+      auth: false,
+      voted: false,
       opinionSubmitted: false,
       opinion: "",
       selectedOptions: {

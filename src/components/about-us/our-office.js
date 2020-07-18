@@ -8,7 +8,7 @@ class OurOffice extends Component {
     const styles = {
       iconStyles: {
         color: "black",
-        fontSize: "30px",
+        fontSize: "40px",
         width: "55px"
       },
       link: {
@@ -43,13 +43,13 @@ class OurOffice extends Component {
               <h5 style={{ color: "#057f16" }}>Get in touch with us!</h5>
               <br />
               <Link style={styles.link}>
-                <i className="fa fa-phone-alt" style={styles.link}></i>{" "}
-                +2348086628044
+                <i className="fa fa-phone-square" style={{...styles.link, fontSize:26}}></i>{" "}
+                <span>+2348086628044</span>
               </Link>
               <br />
               <br />
               <Link style={styles.link}>
-                <i class="fa fa-envelope" style={styles.link}></i>{" "}
+                <i class="fa fa-envelope" style={styles.link}></i>{"  "}
                 info@itakeactions.org
               </Link>
               <br />

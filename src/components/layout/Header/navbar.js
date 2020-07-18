@@ -1,17 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import '../../../styles/headers/header.css';
 
 function Navbar(){
-    const LinkStyle= {
-        textDecoration: "none"
-    }
     return(
         <ul>
-            <Link style={LinkStyle} to="/take-action"><li>TAKE ACTIONS</li></Link>
-            <Link style={LinkStyle} to="/reward"><li>REWARD</li></Link>
-            <Link style={LinkStyle} to="/submit-a-report"><li>SUBMIT A REPORT</li></Link>
-            <Link style={LinkStyle} to="/blog"><li>BLOG</li></Link>
-            <Link style={LinkStyle} to="/about-us"><li>ABOUT US</li></Link>
+            <li><Link className='navbar-routes' to="/take-action">TAKE ACTIONS</Link></li>
+            <li><Link className='navbar-routes' to="/reward">REWARD</Link></li>
+            <li><Link className='navbar-routes' to="/submit-a-report">SUBMIT A REPORT</Link></li>
+            <li><Link className='navbar-routes' to="/blog">BLOG</Link></li>
+            <li><Link className='navbar-routes' to="/about-us">ABOUT US</Link></li>
         </ul>
     );
 }

@@ -20,9 +20,9 @@ class RewardSpecification extends Component {
                     <li>Movement Type: Electronic</li>
                     <li>Display Size: 1.3inches</li>
                 </ul>
-
-                <h4 style={{}} id="brought-by">Brought By:</h4>
-                <img src={broughtByNobleMissions} alt="Noble Missions" id="noble-mission-logo"/>
+                <br />
+                <h4 style={{display:'inline-block'}}>Brought By:</h4>
+                <img style={{position:'relative', top:-5}} src={broughtByNobleMissions} alt="Noble Missions" id="noble-mission-logo"/>
             </div>
          );
     }

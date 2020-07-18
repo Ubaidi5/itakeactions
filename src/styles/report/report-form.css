@@ -16,18 +16,45 @@ h5, h6 {
 }
 
 .drag-n-drop{
+    cursor: pointer;
+    text-align: center;
     border: 1px dashed gray;
     width: 600px;
-    height: 150px;
+    height: auto;
     background-color:#f1f1f1;
     border-radius: 10px;
+    padding: 25px;
 }
 
 .drag-n-drop p {
     color: #60ab30;
     font-size: 15px;
     text-align: center;
-    padding: 70px;
+}
+
+.display-files {
+    /* position: relative; */
+    /* left: -45%; */
+    font-size: 50px;
+    color: #057f16;
+    margin:0;
+    text-align: left;
+}
+
+.upload-progress-bar {
+    height: 7px !important;
+    width: 50%;
+    border-radius: 15px;
+    position: relative;
+    left: 10%;
+    top: -60px;
+}
+
+.upload-file {
+    margin-top: 75px;
+    cursor: pointer;
+    color: #057f16 !important;
+    font-size: 90px;
 }
 
 .submit-report-btn {
@@ -39,4 +66,37 @@ h5, h6 {
     border-radius: 5%;
     margin-left: 50%;
     transform: translate(-100%,0);
+}
+
+.text-between-line {
+    width: 70%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 20px 0 10px;
+    transform: translate(25%,0);
+}
+
+.text-between-line span {
+    background:#fff; 
+    padding:0 10px;
+}
+
+.alert-message {
+    background-color: red;
+    color: white;
+    width: 600px;
+    position: relative;
+    left:50%;
+    transform: translate(-50%,0);
+    height: 40px;
+    padding: 7px 5px 5px 15px;
+}
+
+.file-name {
+    font-size: 13px !important;
+    text-align: left !important;
+    position: relative;
+    top: -50px;
+    left: 60px;  
 }

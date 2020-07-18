@@ -16,7 +16,9 @@ class Header extends Component {
             login:false,
             signup:false,
             authenticate:false,
-        search:"" }
+            search:"",
+            menu:false
+        }
 
         this.sidebarHandler = this.sidebarHandler.bind(this)
     }
@@ -27,7 +29,8 @@ class Header extends Component {
 
     render() { 
         let sidebar;
-        let btnstyle=" fa fa-bars"
+        let btnstyle=" fa fa-bars";
+        let dropDown = false;
         
         if(this.state.sidebarStatus){
             sidebar = <ResponsiveNavbar />
@@ -74,9 +77,19 @@ class Header extends Component {
                                 <img src={user} alt="Profile" title="Profile" style={{width:'40px',height:'40px',borderRadius:'50%'}} />
                             </div>
                             <div className="ml-2" style={{textAlign:'left'}}>
-                                <p className="font-weight-bold mb-0">Charles Omofowan</p>
-                                <small className="font-weight-bold mt-0" style={{color:'#057f16'}}>4 ActBit Coins</small>
+                                <p className="mb-0">Charles Omofowan</p>
+                                <small className="mt-0" style={{color:'#057f16'}}>4 ActBit Coins</small>
                             </div>
+                            <i className="fa fa-angle-down" aria-hidden="true" onClick={()=>this.setState({menu:!this.state.menu})} style={{position:'relative',top:8, left:15, fontSize:35}}></i>
+                            {this.state.menu && this.state.authenticate && <div className='drop-down'>
+                                <ul className='m-0 p-0 list-unstyled'>
+                                    <li className='drop-down-items'><Link className='text-decoration-none drop-down-links'><i className="fa fa-user drop-down-icons" aria-hidden="true"></i> My Profile</Link></li>
+                                    <li className='drop-down-items'><Link className='text-decoration-none drop-down-links'><i className="fa fa-money drop-down-icons" aria-hidden="true"></i> My Wallet</Link></li>
+                                    <li className='drop-down-items'><Link className='text-decoration-none drop-down-links'><i className="fa fa-cog drop-down-icons" aria-hidden="true"></i> Settings</Link></li>
+                                    <li className='drop-down-items'><Link className='text-decoration-none drop-down-links'><i className="fa fa-user-plus drop-down-icons" aria-hidden="true"></i> Invite Friends</Link></li>
+                                    <li className='drop-down-items'><Link className='text-decoration-none drop-down-links'><i class="fa fa-sign-out drop-down-icons" aria-hidden="true"></i> LOG OUT</Link></li>
+                                </ul>
+                            </div>}
                         </div>}
                     </div>
                 </div>

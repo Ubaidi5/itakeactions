@@ -6,7 +6,7 @@ class LatestAction extends React.Component {
   render() {
     return (
       <div className="latest-actions">
-        <h1>Latest Actions</h1>
+        <h1>Take More Actions</h1>
         <hr />
         <br />
         {window.innerWidth > 1300 && this.NormalView()}

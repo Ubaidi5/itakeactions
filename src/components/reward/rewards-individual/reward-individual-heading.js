@@ -8,7 +8,6 @@ class RewardsIndividualHeading extends Component {
             <div className="rewards-individual-heading">
                 <h1>Universal Smartphone Foldable Selfie Stick</h1>
                 <div className="reward-image-wrapper"><img src={selfieStick} /></div>
-                
             </div>
          );
     }

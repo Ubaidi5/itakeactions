@@ -3,8 +3,22 @@
   width: 100%;
   height: 90px;
 }
+
+.navbar-routes {
+  font-size: 17px;
+  color: black;
+}
+
+a:link {
+  text-decoration: none !important;
+}
+
+.navbar-routes:hover {
+  color: #057f16;
+}
+
 .header {
-  position: fixed;
+  position: absolute;
   height: 90px;
   background-color: white;
   display: flex;
@@ -13,6 +27,36 @@
   width: 100%;
   z-index: 100;
   border-bottom: 1px solid rgb(236, 213, 213);
+}
+
+.drop-down-items {
+  width: inherit;
+  text-align: left;
+  background-color: white;
+  padding: 10px 10px;
+  border: calc(1px - 0.8px) solid #292b2c;
+}
+
+.drop-down-icons {
+  font-size: 20px !important;
+  margin-right: 7px;
+  color: #5cb85c !important;
+}
+
+.drop-down-links {
+  color: black;
+}
+
+.drop-down-links:hover {
+  color: #5cb85c
+}
+
+.drop-down {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  width: 200px;
+  top:90px;
 }
 
 .res-menu-btn {
