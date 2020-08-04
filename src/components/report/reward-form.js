@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { ProgressBar } from "react-bootstrap";
+import MediaQuery from 'react-responsive';
 import { Redirect } from "react-router-dom";
 
 import "../../styles/report/report-form.css";
@@ -130,8 +131,8 @@ class ReportForm extends Component {
           </div>
         )}
         <form onSubmit={this.onSubmitHandler.bind(this)}>
-          <div className="form-row">
-            <div className="form-group col-md-6">
+          <div className="form-row mobile-form-row">
+            <div className="form-group col-md-6 mobile-form-row-col">
               <label>Name*</label>
               <input
                 type="text"
@@ -149,7 +150,7 @@ class ReportForm extends Component {
                 </small>
               )}
             </div>
-            <div className="form-group col-md-6">
+            <div className="form-group col-md-6 mobile-form-row-col">
               <label>Last Name*</label>
               <input
                 type="text"
@@ -222,7 +223,7 @@ class ReportForm extends Component {
               </small>
             )}
           </div>
-          <div className="form-group">
+          <div className="form-group" id="select-form">
             <label>State*</label>
             <select
               className="form-control"
@@ -250,7 +251,7 @@ class ReportForm extends Component {
               onChange={this.handleFile.bind(this)}
               ref={e => (this.file = e)}
             />
-            <div style={{ display: "flex" }}>
+            <div id="upload-report-section" style={{ display: "flex" }}>
               <div style={{ flex: 4 }}>
                 <input
                   type="text"
@@ -262,7 +263,8 @@ class ReportForm extends Component {
               </div>
               <div style={{ flex: 1 }}>
                 <button
-                  className="btn"
+                  className="btn" 
+                  id="browse-button"
                   style={{ width: 120 }}
                   onClick={() => this.file.click()}
                 >
@@ -270,7 +272,7 @@ class ReportForm extends Component {
                 </button>
               </div>
             </div>
-            <small className="form-text text-muted">
+            <small className="form-text text-muted" id="browse-text">
               Allowed extensions doc, docx, pdf, png, jpg.
             </small>
           </div>
@@ -341,10 +343,16 @@ class ReportForm extends Component {
           <br />
           <br />
                           
-          <button className="submit-report-btn" type="submit">
+          <button className="submit-report-btn" id="submit-report" type="submit">
             Submit Report
           </button>
         </form>
+
+        <MediaQuery maxDeviceWidth={1000}>
+                    <div style={{position:"relative",height:"10em"}}>
+                    <i className='fas fa-chevron-circle-up up-button-tablet-design' title="Go to top" onClick={()=>{window.scrollTo(0, 0);}} style={{position:"absolute",cursor: "pointer", top:"20%",left:"43%",display:"inline-block",margin:"10px auto",fontSize:"48px",borderRadius:"50%",border:"2px solid black",backgroundColor:"black",color:"white"}}></i>
+                    </div>
+        </MediaQuery>
       </div>
     );
   }

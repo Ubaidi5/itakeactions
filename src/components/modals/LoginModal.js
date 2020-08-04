@@ -57,7 +57,7 @@ class Login extends Component {
                     <div className='row'>
                         <div className='form-group col-sm-3 mr-5'>
                             <div class="form-check">
-                                <input class="form-check-input" style={{marginTop:'7px',boxShadow:'none'}} type="checkbox" checked={this.state.rememberMe} onChange={()=>this.setState({rememberMe:!this.state.rememberMe})} />
+                                <input class="form-check-input" id="remember" style={{marginTop:'7px',boxShadow:'none'}} type="checkbox" checked={this.state.rememberMe} onChange={()=>this.setState({rememberMe:!this.state.rememberMe})} />
                                 <label class="form-check-label" style={{fontSize:'12px',margin:0}}>
                                     Remember me
                                 </label>

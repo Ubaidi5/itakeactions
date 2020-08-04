@@ -4,7 +4,7 @@ import '../../../styles/headers/header.css';
 
 function Navbar(){
     return(
-        <ul>
+        <ul className='mb-0 mt-1'>
             <li><Link className='navbar-routes' to="/take-action">TAKE ACTIONS</Link></li>
             <li><Link className='navbar-routes' to="/reward">REWARD</Link></li>
             <li><Link className='navbar-routes' to="/submit-a-report">SUBMIT A REPORT</Link></li>

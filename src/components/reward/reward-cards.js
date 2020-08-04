@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../styles/reward/reward-cards.css';
 import selfieStick from './images/selfieStick.png';
 import handfree from './images/handfree.png';
+import MediaQuery from 'react-responsive';
 import { Link } from 'react-router-dom';
 
 class RewardCards extends Component {
@@ -73,10 +74,16 @@ class RewardCards extends Component {
                 </div>
 
                 <div className="next-btns">
-                    <buttons className='active' id='track'>1</buttons>
+                    <buttons className='trackActive' id='track'>1</buttons>
                     <buttons id='track'>2</buttons>
                     <buttons id='track'>3</buttons>
                 </div>
+
+                <MediaQuery maxDeviceWidth={1000}>
+                    <div style={{position:"relative",height:"10em"}}>
+                    <i className='fas fa-chevron-circle-up up-button-tablet-design' title="Go to top" onClick={()=>{window.scrollTo(0, 0);}} style={{position:"absolute",cursor: "pointer", top:"20%",left:"43%",display:"inline-block",margin:"10px auto",fontSize:"48px",borderRadius:"50%",border:"2px solid black",backgroundColor:"black",color:"white"}}></i>
+                    </div>
+               </MediaQuery>
 
             </div>
          );

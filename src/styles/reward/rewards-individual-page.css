@@ -164,9 +164,10 @@
 
 /* Responsive Layout */
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width:1000px){
     .rewards-individual-page{
         display: block;
+        width: 100%;
     }
     .rewards-individual-heading{
         text-align: center;
@@ -193,12 +194,15 @@
     .login-btn-for-reward{
         margin: 0;
     }
+    #Brought{
+        display: block !important;
+        text-align: center;
+    }
     .reward-specification ul{
         display: block;
         height: auto;
     }
     #brought-by{
-        
         display: block;
         margin-bottom: 0;
         margin-top: 100px;
@@ -210,13 +214,12 @@
         margin: 20px auto 40px auto;
         top: 0;
     }
-
-    /* Right Section */
     .tweet-section{
-        background-color: #f7f7f7;
+        background-color: white;
     }
+
     .tweet-icon-box{ 
-        width: 70%; 
+        width: 50%; 
         padding: 40px 20px; 
     }
 
@@ -231,5 +234,11 @@
         text-decoration: none;
         border-radius: 50%;
     }
+}
 
+@media only screen and (max-width: 450px){
+    .detail-per-draw{
+        width: 80px;
+        margin: 0px 2px;
+    }
 }

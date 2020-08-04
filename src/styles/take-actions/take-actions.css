@@ -11,7 +11,7 @@
   position: absolute;
   transform: translate(calc(100% - 765px), -175%);
 }
-.filter-by-drop-down {
+/* .filter-by-drop-down {
   position: relative;
   font-family: Arial;
 }
@@ -22,7 +22,7 @@
   width: 200px;
   font-weight: bold;
   height: 40px;
-}
+} */
 .png-num {
     position: absolute;
     left: 50%;
@@ -38,4 +38,67 @@
     padding-top: 7px;
     padding-left: 15px;
     margin-right:10px;
+}
+
+
+
+#mycustomdropdown{
+  padding-left: 0px;
+  border: none;
+  font-weight: 400;
+}
+
+#mycustomdropdown:focus, #mycustomdropdown:hover,#mycustomdropdown:checked {
+  background-color: white !important;
+  outline: none;
+  color: gray;
+  box-shadow: none !important;
+  border-color: white !important;
+}
+
+#mycustomdropdown:after {
+  margin-left: 70px;
+}
+
+.myclass{
+  color: gray;
+}
+
+.myclass:hover{
+  background-color: #057f16;
+  color: white;
+}
+
+.show>.btn-primary.dropdown-toggle{
+  color: gray;
+  background-color: white !important;
+  border-color: white !important;
+}
+
+
+.report-action-content-mobile{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('https://picsum.photos/1000/450');
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 1000px){
+  .customdropdown{
+    margin: 0px auto;
+    width: 70%;
+  }
+
+  .customdropdown > .dropdown-menu{
+    width: 90%;
+  }
+
+  #mycustomdropdown:after {
+    margin-left: 70%;
+  }
 }

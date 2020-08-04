@@ -4,8 +4,9 @@ class RewardDescription extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      authenticate: false,
-      rewardEntered: false
+      authenticate: true,
+      rewardEntered: true,
+      inSufficientBalance:false,
     };
   }
 
@@ -56,7 +57,13 @@ class RewardDescription extends Component {
             Draw date: 09/30/2018
           </h4>
           <h4 style={styles.headers}>50 ActBit Coins reqiured</h4>
-          {this.state.rewardEntered && this.state.authenticate ? (
+          {
+            (this.state.authenticate && this.state.rewardEntered && this.state.inSufficientBalance) && <div>
+              <p className='text-danger font-weight-bold'>You Don't Have Sufficient ActBit Coins To Enter This Reward.</p>
+              <button className='btn' style={{width:'auto',padding:'10px 20px 10px 20px',height:'auto'}}>TAKE MORE ACTIONS TO WIN MORE ACTBIT COINS</button>
+            </div>
+          }
+          {this.state.rewardEntered && this.state.authenticate && !this.state.inSufficientBalance ? (
             <div>
               <p
                 className="font-weight-bold text-success"
@@ -66,13 +73,12 @@ class RewardDescription extends Component {
               </p>
               <button
                 className="btn py-2"
-                style={{ width: "200px", height: "auto", fontSize: 17 }}
+                style={{ width: "200px", height: "auto", fontSize: 17, border:'none',backgroundColor:'green' ,color:'white' }}
               >
                 SEE MY WALLET
               </button>
             </div>
-          ) : (
-            <button href="#" className="login-btn-for-reward">
+          ) : (!this.state.inSufficientBalance && <button href="#" className="login-btn-for-reward">
               {this.state.authenticate
                 ? "ENTER REWARD"
                 : "LOGIN TO ENTER REWARD"}

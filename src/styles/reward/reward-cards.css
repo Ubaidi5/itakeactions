@@ -42,7 +42,7 @@
 }
 
 #track{
-    padding: 5px 0;
+    padding: 4px 1px;
     width: 30px;
     border-radius: 50%;
     color: white;
@@ -51,8 +51,8 @@
     cursor: pointer;
 }
 
-.active{
-    background-color: rgb(56, 48, 48);
+.trackActive {
+    background-color: rgb(56, 48, 48) !important;
 }
 
 @media only screen and (max-width: 600px){

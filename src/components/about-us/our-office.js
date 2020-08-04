@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../../styles/about-us/our-office.css";
 import { Link } from "react-router-dom";
+import MediaQuery from 'react-responsive';
 import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 
 class OurOffice extends Component {
@@ -85,7 +86,15 @@ class OurOffice extends Component {
             </div>
           </div>
         </div>
-        <br /><br /><br /><br /><br /><br /><br />
+        <br /><br />
+
+        <MediaQuery maxDeviceWidth={1000}>
+              <div style={{position:"relative",height:"10em"}}>
+              <i className='fas fa-chevron-circle-up up-button-tablet-design' title="Go to top" onClick={()=>{window.scrollTo(0, 0);}} style={{position:"absolute",cursor: "pointer", top:"20%",left:"43%",display:"inline-block",margin:"10px auto",fontSize:"48px",borderRadius:"50%",border:"2px solid black",backgroundColor:"black",color:"white"}}></i>
+              </div>
+        </MediaQuery>
+        
+        
       </div>
     );
   }

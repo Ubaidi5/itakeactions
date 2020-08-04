@@ -21,7 +21,7 @@ class RewardSpecification extends Component {
                     <li>Display Size: 1.3inches</li>
                 </ul>
                 <br />
-                <h4 style={{display:'inline-block'}}>Brought By:</h4>
+                <h4 style={{display:'inline-block'}} id="Brought">Brought By:</h4>
                 <img style={{position:'relative', top:-5}} src={broughtByNobleMissions} alt="Noble Missions" id="noble-mission-logo"/>
             </div>
          );

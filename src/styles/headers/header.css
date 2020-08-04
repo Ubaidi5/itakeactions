@@ -9,10 +9,6 @@
   color: black;
 }
 
-a:link {
-  text-decoration: none !important;
-}
-
 .navbar-routes:hover {
   color: #057f16;
 }
@@ -71,6 +67,29 @@ a:link {
 
 .links {
   flex: 60%;
+}
+
+.search-button {
+  color: grey;
+  font-size: 20px;
+}
+
+.search-input {
+  outline: none;
+  border: none;
+  transition: 0.4s;
+  border-bottom: 2px solid grey;
+  color: grey;
+  font-weight: bold;
+  font-size: 20px;
+  width: 0px;
+  height: 30px;
+}
+
+.search-box {
+  position: absolute;
+  right:20%;
+  top:32px;
 }
 
 /*                                            ^-- All four section width is defined*/
@@ -133,25 +152,6 @@ a:link {
   color: white;
 }
 
-#search-input {
-  height: 50px;
-  font-size: 20px;
-  display: none;
-  font-weight: bold;
-  border: none;
-  outline: none;
-  color: #555;
-  padding: 3px;
-  padding-right: 60px;
-  position: absolute;
-  top: 8px;
-  width: 0px;
-  right: 265px;
-  z-index: 3;
-  transition: width 0.4s cubic-bezier(0, 0.795, 0, 1);
-  cursor: text;
-}
-
 @media only screen and (max-width: 1000px) {
   .row{
     margin-right: 0px;
@@ -182,6 +182,10 @@ a:link {
     text-decoration: none;
   }
 
+  .logo{
+    width: 80px;
+  }
+
   .logo-image {
     flex: 60%;
   }
@@ -190,19 +194,45 @@ a:link {
     flex: 20%;
   }
 
-  .fa-search:before{
-    padding-left: 25px;
+  .side-btn-auth{
+    flex: none;
   }
 
-  #search-input{
-    width: 80% !important;
-    top: 90px;
-    right: 0px;
-    height: 60px;
-    background-color: transparent;
-    color: black !important;
-    padding: 0;
+  .fa-angle-down{
+    top: 25px !important;
+    left: -25px !important;
+    font-size: 25px !important;
   }
+
 }
+
+
+@media only screen and (max-width: 400px){
+  .side-btn.row{
+    margin-right: 20px;
+  }
+
+  img.logo.small{
+    width: 60px;
+    padding: 5px;
+  }
+
+  .res-menu-btn > .link{
+    font-size: 20px;
+    margin-left: 20px;
+  }
+
+  .ml-3 > div > img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .fa .fa-times{
+    margin-left: 20px;
+  }
+} 
+
+
+
 
 

@@ -40,39 +40,37 @@ class Header extends Component {
             <div className="area-covering">
                 <div className="header">
                     <div className="res-menu-btn">                           {/* First div --- menu button */}
-                        <Link className={btnstyle} onClick={this.sidebarHandler}></Link>
+                        <Link className={btnstyle + ` link`} to='' onClick={this.sidebarHandler}></Link>
                     </div>
                     {sidebar}
                     <div className="logo-image">                             {/* Second div --- Logo */}
-                        <a href="/"><img className="logo" src={logo} alt="iTakeAction"/></a>
+                        <a href="/"><img className={`logo` + `${this.state.authenticate ? " small" : ""}`} src={logo} alt="iTakeAction"/></a>
                     </div>
                         
-                    <div className="links">                                  {/* Third div --- Links */}
+                    <div className="links" >                                  {/* Third div --- Links */}
                         <Navbar />
                     </div>
                         
-                    <div className='side-btn row'>
-                        <input id="search-input" name="search" type="text" placeholder="Search" value={this.state.search} onChange={(e)=>this.setState({search:e})} ref={(e)=>this._input = e} />                               {/* Fourth div --- Search area */}
-                        <i className="fa fa-search" id="search-button" onClick={()=>{
-                            if(this.state.search !== '') {
-                                // go and search for the string
-                            }
-                            else {
-                                if(this._input.style.width) {
-                                    this._input.style.width ='';
-                                    this._input.style.border='none';
-                                    this._input.style.display = 'none';
+                    <div className={this.state.authenticate ? "side-btn-auth" : "side-btn row"}>
+                        <div className='search-box'>
+                            <input className='search-input' type='text' ref={e=>this.input_ = e} placeholder='Search' maxLength={30} value={this.state.search} onChange={e=>this.setState({search:e.target.value})} hidden />
+                            <i className="search-button fas fa-search" onClick={()=>{
+                                if(!this.input_.style.width || this.input_.style.width === '0px') {
+                                    this.input_.hidden = false;
+                                    this.input_.style.width = '35rem';
                                 }
-                                else {
-                                    this._input.style.width = '40%';
-                                    this._input.style.borderBottom='1px solid black';
-                                    this._input.style.display = 'inline-block';
+                                else if(this.state.search.length) {
+                                    // search that thing
+                                } else if(this.state.search.length === 0 && this.input_.style.width === '35rem') {
+                                    this.input_.style.width = 0;
+                                    this.input_.hidden = true;
                                 }
-                            }
-                    }}></i>
+                            }}></i>
+                        </div>
                         {!this.state.authenticate && <div><button className="login" onClick={()=>this.setState({login:true})}>LOGIN</button>
                         <button className="signup" onClick={()=>this.setState({signup:true})}>SIGN UP</button></div>}
                         {this.state.authenticate && <div className="row ml-3">
+                            <br/><br/>
                             <div>
                                 <img src={user} alt="Profile" title="Profile" style={{width:'40px',height:'40px',borderRadius:'50%'}} />
                             </div>

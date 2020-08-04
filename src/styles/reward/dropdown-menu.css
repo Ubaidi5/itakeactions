@@ -1,14 +1,88 @@
-.reward-head{
-    width: 100%;
+.reward-head {
+  width: 100%;
 }
 
-.catlog{
-    height: 30vh;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+.catlog {
+  height: 30vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.customdropdown {
+  width: 180px;
+  height: 40px;
+  font-size: 18px;
+  color: gray;
+  background-color: white;
+  border-bottom: 2px solid gray !important;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-left-width: 0px;
+  outline: none;
+}
+
+#mycustomdropdown {
+  padding: 0 !important;
+  text-align: left;
+  width:inherit !important;
+  border: none;
+  color: grey;
+  font-weight: 400;
+}
+
+#mycustomdropdown:focus,
+#mycustomdropdown:hover,
+#mycustomdropdown:checked {
+  background-color: white !important;
+  outline: none;
+  box-shadow: none !important;
+  border-color: white !important;
+}
+
+#mycustomdropdown:after {
+  margin-left: 70px;
+}
+
+.myclass {
+  color: gray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+ 
+.show {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.myclass:hover {
+  background-color: rgb(1, 168, 1);
+  color: white;
+}
+
+.dropdown-menus {
+    justify-content: space-between;
+    padding: 0px 10rem;
+}
+.search-rewards {
+    border:none;
+    width: 180px;
+    height: 40px;
+    outline: none;
+    border-bottom: 2px solid grey;
+    font-weight: 400;
+    color: grey;
+    cursor: pointer;
+    font-size: 18px;
+}
+.search-rewards-icon {
+    cursor: pointer;
+    color:grey;
+    font-size: 18px;
+    position: relative;
+    left: -20px;
 }
