@@ -10,6 +10,9 @@ import {
   ReactQueryCacheProvider,
 } from "react-query";
 import { getTodos } from "./apis/getAllRewards";
+// Setting Up Redux
+import { Provider } from "react-redux";
+import { store } from "./configStore";
 
 const queryCache = new QueryCache();
 
@@ -21,9 +24,11 @@ function App() {
   console.log("todos Query", todosQuery);
   return (
     <ReactQueryCacheProvider queryCache={queryCache}>
-      <Router>
-        <Routes />
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <Routes />
+        </Router>
+      </Provider>
     </ReactQueryCacheProvider>
   );
 }
