@@ -10,7 +10,7 @@ import Homepage from "./screens/homepage/Homepage";
 // import AboutUs from "./about-us/about-us";
 // import TakeAction from "./takeAction/takeaction";
 import RewardsWrapper from "./screens/rewards/Rewards";
-// import RewardsIndividualPage from "./reward/rewards-individual/rewards-individual-page";
+import RewardsIndividualPage from "./screens/rewards/RewardsIndividual";
 // import ReportForm from "./report/reward-form";
 // import Report from "./report/UnauthReport";
 // import ReportSubmitted from "./report/ReportSubmitted";
@@ -33,12 +33,8 @@ function Routes() {
           <Route exact path="/" component={Homepage} />
           {/* <Route path="/take-action" exact component={TakeAction} /> */}
           <Route path="/reward" exact component={RewardsWrapper} />
+          <Route path="/reward/:slug" exact component={RewardsIndividualPage} />
           {/* <Route
-            path="/reward/rewards-individual"
-            exact
-            component={RewardsIndividualPage}
-          />
-          <Route
             path="/submit-a-report"
             exact
             component={() =>

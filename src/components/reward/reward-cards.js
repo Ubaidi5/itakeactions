@@ -12,7 +12,7 @@ const RewardCards = (props) => {
       <h4>{title}</h4>
       <h5>50 ActBit coins required</h5>
       <h5>Draw date: {moment(drawDate).format("DD/MM/YYYY")}</h5>
-      <Link to="/reward/rewards-individual" className="view-rewards-btn">
+      <Link to={`/reward/${slug}`} className="view-rewards-btn">
         <button className="btn">VIEW DETAILS</button>
       </Link>
     </div>

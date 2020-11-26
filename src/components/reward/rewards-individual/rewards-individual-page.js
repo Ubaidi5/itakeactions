@@ -1,64 +1,91 @@
-import React, { Component } from 'react';
-import '../../../styles/reward/rewards-individual-page.css';
-import MediaQuery from 'react-responsive';
-import petetionIcon from '../../home/images/petition-icon-green.png';
-import tweetIcon from '../../home/images/tweet-icon-green.png';
-import RewardsIndividualHeading from './reward-individual-heading';
-import RewardDescription from './reward-description';
-import RewardSpecification from './reward-specification';
+import React, { Component } from "react";
+import "../../../styles/reward/rewards-individual-page.css";
+import petetionIcon from "../../home/images/petition-icon-green.png";
+import tweetIcon from "../../home/images/tweet-icon-green.png";
+import RewardDescription from "./reward-description";
+import broughtByNobleMissions from "../images/broughtByNobleMissions.jpg";
+import { Row, Col } from "antd";
 
-class RewardsIndividualPage extends Component {
-    render() {
-        function myFunc(e){
-            e.preventDefault();
-            var l = document.getElementsByClassName("rest-actions").length;
-            var i = 0;
-            while(i < l){
-              document.getElementsByClassName("rest-actions")[i].style.display = "block";
-              i++;
-            }
-        } 
-        return ( 
-            <div className="rewards-individual-page" id="t">
-                <div className="individual-reward-detail">
-                    <RewardsIndividualHeading />
-                    <RewardDescription />
-                    <RewardSpecification />
-                </div>
-                
-                <div className='tweet-section'>
-                    <h4>Earn more ActBit Coins</h4>
-                    <hr/><br/>
-                    <div className="tweet-box-wrapper">
-                                <div className="tweet-icon-box">
-                                    <img src={tweetIcon} alt="" className="icon"/>
-                                    <h5><strong style={{color:'black'}}>Tweet</strong></h5>
-                                    <p>Thank president Muhammadu Buhari for deducting from Paris Club Refund to... <a href="#" className='text-success'>Read more</a></p>
-                                    <button className="tweet-card-btn">TWEET NOW</button>
-                                </div>
-                                <div className="tweet-icon-box rest-actions">
-                                    <img src={petetionIcon} alt="" className="icon"/>
-                                    <h5><strong style={{color:'black'}}>Petition</strong></h5>
-                                    <p>petitioning Niger State Governor to provide conducive learning environment... <a href="#" className='text-success'>Read more</a></p>
-                                    <button className="tweet-card-btn">SIGN PETITION</button>
-                                </div>
-                                <div className="tweet-icon-box rest-actions">
-                                    <img src={tweetIcon} alt="" className="icon"/>
-                                    <h5><strong style={{color:'black'}}>Tweet</strong></h5>
-                                    <p>Tell the leaderdhip of the National Assembly to urge all members to prioritize... <a href="#" className='text-success'>Read more</a></p>
-                                    <button className="tweet-card-btn">TWEET NOW</button>
-                                </div>
-                            </div>
-                            <MediaQuery maxDeviceWidth={1000}>
-                                <button className="more-actions-button mt-4 btn mybutton" onClick={myFunc}>SEE MORE ACTIONS</button>
-                                <div style={{position:"relative",height:"10em"}}>
-                                <i className='fas fa-chevron-circle-up up-button-tablet-design' title="Go to top" onClick={()=>{window.scrollTo(0, 0);}} style={{position:"absolute",cursor: "pointer", top:"20%",left:"43%",display:"inline-block",margin:"10px auto",fontSize:"48px",borderRadius:"50%",border:"2px solid black",backgroundColor:"black",color:"white"}}></i>
-                                </div>
-                            </MediaQuery>
-                </div>
-            </div>
-         );
-    }
-}
- 
+const baseURL = process.env.REACT_APP_BASE_URL_API;
+
+const RewardsIndividualPage = (props) => {
+  const { data } = props;
+  return (
+    <Row className="rewards-individual-page" id="t" justify="space-between">
+      <Col span={16}>
+        <h1>{data.reward.title}</h1>
+        <div className="reward-image-wrapper">
+          <img src={`${baseURL}${data.reward.image}`} />
+        </div>
+
+        <RewardDescription reward={data.reward} />
+        {/* <RewardSpecification /> */}
+        <div className="reward-specification">
+          <h3 id="specification-heading">Specification:</h3>
+          <ul className="specifications">
+            <li>Functions: Passometer, Sleep Tracker</li>
+            <li>Message Remainder, Call Remainder, Push</li>
+            <li>Message, Alarm Clock, Week</li>
+            <li>Battery Capacity: 120-180mAh</li>
+            <li>RAM: 128MB</li>
+            <li>Waterproof Grade: Life Waterproof</li>
+            <li>Brand Material: Silica Gel</li>
+            <li>App Download Available: Yes</li>
+            <li>Style: Sport</li>
+            <li>Case Material: Alloy</li>
+            <li>Movement Type: Electronic</li>
+            <li>Display Size: 1.3inches</li>
+          </ul>
+          <br />
+          <h4 style={{ display: "inline-block" }} id="Brought">
+            Brought By:
+          </h4>
+          <img
+            style={{ position: "relative", top: -5 }}
+            src={broughtByNobleMissions}
+            alt="Noble Missions"
+            id="noble-mission-logo"
+          />
+        </div>
+      </Col>
+
+      {/* ---------------------------------- */}
+      {/* Tweet and Petetion Section Heading */}
+      {/* ---------------------------------- */}
+      <Col span={7}>
+        <div className="tweet-section">
+          <h4>Earn more ActBit Coins</h4>
+          <div
+            style={{
+              width: "60%",
+              margin: "auto",
+              background: "#343434",
+              height: 3,
+              marginBottom: 24,
+            }}
+          />
+          {/* Mapping Tweets */}
+          {data.actions.map((action, index) => {
+            console.log("Tweet ---->", action);
+            return (
+              <div className="tweet-card" key={index}>
+                <img
+                  src={action.type === "tweet" ? tweetIcon : petetionIcon}
+                  alt={action.type === "tweet" ? "tweetIcon" : "petetionIcon"}
+                  style={{ width: 100 }}
+                />
+                <h5>{action.type}</h5>
+                <p>{action.title}</p>
+                <button className="tweet-card-btn">
+                  {action.type === "tweet" ? "TWEET NOW" : "PETETION"}
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      </Col>
+    </Row>
+  );
+};
+
 export default RewardsIndividualPage;
