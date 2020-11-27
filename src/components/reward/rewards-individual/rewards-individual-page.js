@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../../../styles/reward/rewards-individual-page.css";
-import petetionIcon from "../../home/images/petition-icon-green.png";
-import tweetIcon from "../../home/images/tweet-icon-green.png";
+import TweetCard from "../../cards/tweetCard";
 import RewardDescription from "./reward-description";
 import broughtByNobleMissions from "../images/broughtByNobleMissions.jpg";
 import { Row, Col } from "antd";
@@ -22,7 +21,7 @@ const RewardsIndividualPage = (props) => {
         {/* <RewardSpecification /> */}
         <div className="reward-specification">
           <h3 id="specification-heading">Specification:</h3>
-          <ul className="specifications">
+          {/* <ul className="specifications">
             <li>Functions: Passometer, Sleep Tracker</li>
             <li>Message Remainder, Call Remainder, Push</li>
             <li>Message, Alarm Clock, Week</li>
@@ -35,7 +34,8 @@ const RewardsIndividualPage = (props) => {
             <li>Case Material: Alloy</li>
             <li>Movement Type: Electronic</li>
             <li>Display Size: 1.3inches</li>
-          </ul>
+          </ul> */}
+          {data.reward.description}
           <br />
           <h4 style={{ display: "inline-block" }} id="Brought">
             Brought By:
@@ -68,18 +68,11 @@ const RewardsIndividualPage = (props) => {
           {data.actions.map((action, index) => {
             console.log("Tweet ---->", action);
             return (
-              <div className="tweet-card" key={index}>
-                <img
-                  src={action.type === "tweet" ? tweetIcon : petetionIcon}
-                  alt={action.type === "tweet" ? "tweetIcon" : "petetionIcon"}
-                  style={{ width: 100 }}
-                />
-                <h5>{action.type}</h5>
-                <p>{action.title}</p>
-                <button className="tweet-card-btn">
-                  {action.type === "tweet" ? "TWEET NOW" : "PETETION"}
-                </button>
-              </div>
+              <TweetCard
+                key={`tweet_card_${index}`}
+                type={action.type}
+                title={action.title}
+              />
             );
           })}
         </div>
