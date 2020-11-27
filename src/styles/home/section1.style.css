@@ -1,0 +1,98 @@
+.overview {
+  background-image: url("/assests/education.png");
+  height: calc(100vh - 90px);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center !important;
+}
+
+/*-------- Links on right side -------------*/
+.overview-social-links {
+  text-align: right;
+  padding: 20px 100px 20px 20px;
+}
+
+.overview-social-links a {
+  color: white;
+  font-size: 25px;
+  padding: 15px;
+  text-decoration: none;
+}
+
+/*----------- Paragraph ------------*/
+.join-the-community {
+  padding: 0 115px;
+  width: 50%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.join-the-community-btn {
+  margin-top: 0.5cm;
+  background-color: #f3e404;
+  font-size: 1em;
+  font-weight: bolder;
+  width: 300px;
+  height: 44px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/*------------- Achivement style -------------*/
+.achivements-container {
+  width: 70%;
+  margin: -100px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.achivement-box {
+  height: 150px;
+  width: 200px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.09), 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive for mobile screens */
+@media only screen and (max-width: 480px) {
+  .overview-social-links {
+    display: none;
+  }
+  .overview {
+    height: 65vh;
+  }
+
+  .join-the-community {
+    width: 80%;
+    margin: auto;
+    padding: 0;
+    padding-top: 100px;
+  }
+
+  .achivements-container {
+    width: 90% !important;
+    display: block !important;
+    margin-top: -48px !important;
+  }
+
+  .achivement-box {
+    width: 90% !important;
+    margin: auto;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    margin-bottom: 24px;
+    padding: 0 24px !important;
+    height: 60px !important;
+  }
+}
