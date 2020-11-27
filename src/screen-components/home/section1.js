@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../components/buttons";
 import "../../styles/home/section1.style.css";
 
 const Section1 = (props) => {
@@ -48,17 +49,35 @@ const Section1 = (props) => {
           >
             A community of active citizen taking actions for education
           </p>
-          <button className="join-the-community-btn">JOIN THE COMMUNITY</button>
+          <Button
+            size="large"
+            style={{
+              marginTop: "0.5cm",
+              width: 300,
+              backgroundColor: "#f3e404",
+              color: "#000",
+              fontWeight: 600,
+            }}
+          >
+            JOIN THE COMMUNITY
+          </Button>
         </div>
       </div>
 
       <div className="achivements-container">
         {achivedItems.map((item) => (
           <div className="achivement-box">
-            <p style={{ margin: 0, fontSize: 24 }}>
-              <b>{item.number}</b>
+            <p
+              style={{
+                margin: 0,
+                fontSize: window.innerWidth <= 480 ? "25pt" : "45pt",
+              }}
+            >
+              {item.number}
             </p>
-            <p style={{ margin: 0 }}>{item.title}</p>
+            <p style={{ margin: 0, fontSize: 16, fontWeight: 600 }}>
+              {item.title}
+            </p>
           </div>
         ))}
       </div>

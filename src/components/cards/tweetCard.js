@@ -1,6 +1,7 @@
 import React from "react";
 import tweetIcon from "../../assets/tweet-icon-green.png";
 import petetionIcon from "../../assets/petition-icon-green.png";
+import Button from "../../components/buttons";
 
 const TweetCard = (props) => {
   const { type, title } = props;
@@ -8,10 +9,10 @@ const TweetCard = (props) => {
     <div
       className="tweet-card"
       style={{
-        width: 250,
+        width: 240,
         margin: "0 auto 50px auto",
         boxShadow: "0 3px 8px rgba(0, 0, 0, 0.3)",
-        padding: "20px 30px",
+        padding: "20px",
         borderRadius: 24,
         backgroundColor: "#fff",
       }}
@@ -22,8 +23,20 @@ const TweetCard = (props) => {
         style={{ width: 100 }}
       />
       <h5>{type}</h5>
-      <p>{title}</p>
-      <button>{type === "tweet" ? "TWEET NOW" : "PETETION"}</button>
+      <p
+        style={{
+          height: 80,
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          whiteSpace: "break-spaces",
+          textAlign: "left",
+        }}
+      >
+        {title}
+      </p>
+      <Button size="large">
+        {type === "tweet" ? "TWEET NOW" : "PETETION"}
+      </Button>
     </div>
   );
 };
