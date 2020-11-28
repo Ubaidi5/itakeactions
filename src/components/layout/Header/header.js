@@ -209,7 +209,10 @@ class Header extends Component {
             )}
           </div>
         </div>
-        <Login show={this.state.login} toggle={() => {}} />
+        <Login
+          visible={this.state.login}
+          onCancel={() => this.setState({ login: false })}
+        />
         <SignUp show={this.state.signup} toggle={() => {}} />
       </div>
     );
