@@ -1,18 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from 'react-router-dom';
 
-import "../../../styles/headers/responsive-navbar.css";
 import Navbar from "./navbar";
+import "../../../styles/headers/responsive-navbar.css";
 
-class ResponsiveNavbar extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className="navbar">
+const ResponsiveNavbar = () => {
+  return (
+    <div className="navbar">
         <div className="menu">
           {/* navbar */}
           <Navbar />
@@ -34,8 +28,7 @@ class ResponsiveNavbar extends Component {
         </div>
         <div className="backdrop" />
       </div>
-    );
-  }
+  );
 }
-
+ 
 export default ResponsiveNavbar;

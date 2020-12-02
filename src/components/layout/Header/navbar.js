@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import '../../../styles/headers/header.css';
 
-function Navbar(){
+const Navbar = () => {
     return(
         <ul className='mb-0 mt-1'>
             <li><Link className='navbar-routes' to="/take-action">TAKE ACTIONS</Link></li>

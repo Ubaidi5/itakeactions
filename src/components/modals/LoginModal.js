@@ -6,20 +6,20 @@ import InputFeild from "../inputs/form-input";
 import Button from "../buttons";
 import { StyledCheckbox } from "../inputs/checkbox";
 
-const LoginModal = (props) => {
+const LoginModal = props => {
   const [state, setState] = React.useState({
     email: "",
     password: "",
     rememberMe: false,
-    error: false,
+    error: false
   });
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     const { name, value } = e.target;
     setState({ ...state, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     console.log(e);
   };
 
@@ -47,7 +47,7 @@ const LoginModal = (props) => {
                 style={{
                   backgroundColor: "#3b5998",
                   border: "1px solid #3b5998",
-                  color: "white",
+                  color: "white"
                 }}
               >
                 <i class="fa fa-facebook fa-fw"></i> Facebook
@@ -59,7 +59,7 @@ const LoginModal = (props) => {
                 style={{
                   backgroundColor: "#db4a39",
                   border: "1px solid #db4a39",
-                  color: "white",
+                  color: "white"
                 }}
               >
                 <i class="fa fa-google fa-fw"></i> Google
@@ -81,8 +81,8 @@ const LoginModal = (props) => {
               {
                 type: "email",
                 required: true,
-                message: "Please enter valid email",
-              },
+                message: "Please enter valid email"
+              }
             ]}
             validateFirst={false}
             initialValue={state.email}
@@ -93,7 +93,7 @@ const LoginModal = (props) => {
               value={state.email}
               placeholder="abc@xyz.com"
               onChange={handleChange}
-              onKeyPress={(e) => e.which === 13 && handleSubmit()}
+              onKeyPress={e => e.which === 13 && handleSubmit()}
               style={{ margin: 0 }}
             />
           </Form.Item>
@@ -103,8 +103,8 @@ const LoginModal = (props) => {
               {
                 type: "string",
                 required: true,
-                min: 8,
-              },
+                min: 8
+              }
             ]}
             validateFirst={false}
           >
@@ -115,7 +115,7 @@ const LoginModal = (props) => {
               placeholder="Password"
               type="password"
               onChange={handleChange}
-              onKeyPress={(e) => e.which === 13 && handleSubmit()}
+              onKeyPress={e => e.which === 13 && handleSubmit()}
               style={{ margin: 0 }}
             />
           </Form.Item>
@@ -124,11 +124,11 @@ const LoginModal = (props) => {
             style={{
               margin: "24px 0",
               display: "flex",
-              justifyContent: "space-between",
+              justifyContent: "space-between"
             }}
           >
             <StyledCheckbox
-              onChange={(e) =>
+              onChange={e =>
                 setState({ ...state, rememberMe: e.target.checked })
               }
             >

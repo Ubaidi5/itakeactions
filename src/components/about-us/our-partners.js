@@ -3,9 +3,9 @@ import '../../styles/about-us/our-partners.css'
 import accountabilityLab from './images/Image20.png'
 import truckLogo from './images/Image21.png'
 
-function OurPartners(){
-     return ( 
-            <div className="our-partners">
+const OurPartners = () => {
+    return (
+        <div className="our-partners">
                 <h1 className="our-partners-heading">Our Partners</h1>
                 <hr id="our-partners-heading-divider"/>
                 
@@ -29,8 +29,7 @@ function OurPartners(){
                 </div>
                 
             </div>
-         );
-    
+    );
 }
  
 export default OurPartners;

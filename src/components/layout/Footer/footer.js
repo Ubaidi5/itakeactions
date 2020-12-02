@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 import '../../../styles/footer.css';
 
-function Footer() {
+const Footer = () => {
     return ( 
         <div className="footer">
             <div className="footer1">
                 <div className="section one">
                     <div className="section-one-content-wrapper">
-                        <img src={require('./images/footer.png')} alt="iTakeAction"/>
-                        <div className="contact">
+                        <img src={require('./images/footer.png')} height={100} alt="iTakeAction"/>
+                        <div className="mt-3 contact">
                             <Link>CONTACT US</Link>
                             <Link>TAKE ACTIONS</Link>
                         </div>
@@ -18,25 +18,19 @@ function Footer() {
                 </div>
     
                 <div className="section two">
-                        <h2>Learn More</h2>
+                        <h2 className="text-light font-weight-bold">Learn More</h2>
                         <Link>IMPACT</Link>
                         <Link>PARTNERSHIP</Link>
                         <Link>ARTICLE CONTRIBUTION</Link>
                         <Link>FAQ</Link>
                         <div className="subscribe">
-                            <h3>SIGN UP TO OUR NEWSLETTER</h3>
+                            <h5 className="font-weight-bold text-light">SIGN UP TO OUR NEWSLETTER</h5>
                             <input type="text" placeholder="E-mail"/>
                             <button className="go">Go!</button>
                         </div>
                 </div>
     
                 <div className="section three">
-                    <h2>SEE OUR NUMBERS</h2>
-                    {/* <b>1390</b><span>Active Citizens</span><br/>
-                    <b>1870</b><span>Actions Taken</span><br/>
-                    <b>70</b><span>Campaigns</span><br/>
-                    <b>344</b><span>Beneficiaries</span><br/>
-                    <b>3344</b><span>Citizens we are Campaigning for</span> */}
                     <div className="sec-3-wrapper">
                         <div className="numbers">
                             <b>1390</b>

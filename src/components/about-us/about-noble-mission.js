@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../../styles/about-us/about-noble-mission.css';
 
-class AboutNobleMission extends Component {
-   
-    render() { 
-        return ( 
-            <div className="about-noble-mission">
+const AboutNobleMission = () => {
+    return (
+        <div className="about-noble-mission">
                 <h1 className="noble-mission-heading">About Noble Missions</h1>
                 <hr id="about-noble-mission-heading-divider"/>
                 <p className='about-noble-mission-paragraph'>
@@ -17,8 +15,7 @@ class AboutNobleMission extends Component {
                 </p>
                 <a href='#' id='noble-mission-page-btn'>VISIT NOBLE MISSIONS PAGE</a>
             </div>
-         );
-    }
+    );
 }
  
 export default AboutNobleMission;

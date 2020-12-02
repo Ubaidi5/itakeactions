@@ -7,7 +7,6 @@ const RewardCard = (props) => {
     <div
       style={{
         width: 240,
-        // height: 290,
         margin: "0 auto 50px auto",
         boxShadow: "0 3px 8px rgba(0, 0, 0, 0.3)",
         padding: "20px",

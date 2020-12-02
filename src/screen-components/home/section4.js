@@ -6,7 +6,7 @@ import userIcon from "../../assets/user.png";
 import { Row, Col } from "antd";
 
 const Section3 = () => {
-  let a = [1, 2, 3];
+  const a = [1, 2, 3];
   return (
     <Row style={{ width: "90%", margin: "40px auto" }} justify="space-between">
       <Col span={window.innerWidth <= 480 ? 24 : 15}>

@@ -12,7 +12,7 @@ const ReportSubmitted = (props) => {
     //         <Redirect to="/submit-a-report" />
     //     );
     // }
-    function myFunc(e){
+    const myFunc = e => {
         e.preventDefault();
         var l = document.getElementsByClassName("rest-actions").length;
         var i = 0;

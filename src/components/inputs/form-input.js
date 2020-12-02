@@ -1,7 +1,7 @@
 import React from "react";
 import InputWrapper from "./inputWrapper";
 
-const InputFeild = (props) => {
+const InputFeild = props => {
   const { label, placeholder, type, name, value } = props;
   return (
     <div
@@ -10,7 +10,7 @@ const InputFeild = (props) => {
           ? props.style
           : {
               marginTop: 16,
-              width: "100%",
+              width: "100%"
             }
       }
     >
@@ -18,7 +18,7 @@ const InputFeild = (props) => {
         style={{
           textAlign: "left",
           marginBottom: 8,
-          fontSize: 16,
+          fontSize: 16
         }}
       >
         {label}

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useRef } from "react";
 import "../../../styles/headers/header.css";
 import logo from "./images/logo-high-res.png";
 // import ResponsiveMenu from './responsive-menu';
@@ -9,43 +9,36 @@ import Login from "../../modals/LoginModal";
 import SignUp from "../../modals/SignUpModal";
 import user from "./images/user.png";
 
-class Header extends Component {
-  constructor() {
-    super();
-    this.state = {
-      sidebarStatus: false,
-      login: false,
-      signup: false,
-      authenticate: false,
-      search: "",
-      menu: false,
-    };
+const Header = () => {
+  
+  const [sidebarStatus, setSidebarStatus] = useState(false);
+  const [login, setLogin] = useState(false);
+  const [signup, setSignup] = useState(false);
+  const [authenticate, setAuthenticate] = useState(false);
+  const [search, setSearch] = useState("");
+  const [menu, setMenu] = useState(false);
+  const input_ = useRef(null);
 
-    this.sidebarHandler = this.sidebarHandler.bind(this);
-  }
+  const sidebarHandler = () => setSidebarStatus(!sidebarStatus);
 
-  sidebarHandler() {
-    this.setState({ sidebarStatus: !this.state.sidebarStatus });
-  }
+  let sidebar;
+  let btnstyle = " fa fa-bars";
+  const dropDown = false;
 
-  render() {
-    let sidebar;
-    let btnstyle = " fa fa-bars";
-    let dropDown = false;
-
-    if (this.state.sidebarStatus) {
+    if (sidebarStatus) {
       sidebar = <ResponsiveNavbar />;
       btnstyle = "fa fa-times";
     }
-    return (
-      <div className="area-covering">
+  
+  return (
+    <div className="area-covering">
         <div className="header">
           <div className="res-menu-btn">
             {/* First div --- menu button */}
             <Link
               className={btnstyle + ` link`}
               to=""
-              onClick={this.sidebarHandler}
+              onClick={sidebarHandler}
             ></Link>
           </div>
           {sidebar}
@@ -54,7 +47,7 @@ class Header extends Component {
             <Link to="/">
               <img
                 className={
-                  `logo` + `${this.state.authenticate ? " small" : ""}`
+                  `logo` + `${authenticate ? " small" : ""}`
                 }
                 src={logo}
                 alt="iTakeAction"
@@ -70,58 +63,58 @@ class Header extends Component {
 
           <div
             className={
-              this.state.authenticate ? "side-btn-auth" : "side-btn row"
+              authenticate ? "side-btn-auth" : "side-btn row"
             }
           >
             <div className="search-box">
               <input
                 className="search-input"
                 type="text"
-                ref={(e) => (this.input_ = e)}
+                ref={input_}
                 placeholder="Search"
                 maxLength={30}
-                value={this.state.search}
-                onChange={(e) => this.setState({ search: e.target.value })}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
                 hidden
               />
               <i
                 className="search-button fas fa-search"
                 onClick={() => {
                   if (
-                    !this.input_.style.width ||
-                    this.input_.style.width === "0px"
+                    !input_.style.width ||
+                    input_.style.width === "0px"
                   ) {
-                    this.input_.hidden = false;
-                    this.input_.style.width = "35rem";
-                  } else if (this.state.search.length) {
+                    input_.hidden = false;
+                    input_.style.width = "35rem";
+                  } else if (search.length) {
                     // search that thing
                   } else if (
-                    this.state.search.length === 0 &&
-                    this.input_.style.width === "35rem"
+                    search.length === 0 &&
+                    input_.style.width === "35rem"
                   ) {
-                    this.input_.style.width = 0;
-                    this.input_.hidden = true;
+                    input_.style.width = 0;
+                    input_.hidden = true;
                   }
                 }}
               ></i>
             </div>
-            {!this.state.authenticate && (
+            {!authenticate && (
               <div>
                 <button
                   className="login"
-                  onClick={() => this.setState({ login: true })}
+                  onClick={() => setLogin(true)}
                 >
                   LOGIN
                 </button>
                 <button
                   className="signup"
-                  onClick={() => this.setState({ signup: true })}
+                  onClick={() => setSignup(true)}
                 >
                   SIGN UP
                 </button>
               </div>
             )}
-            {this.state.authenticate && (
+            {authenticate && (
               <div className="row ml-3">
                 <br />
                 <br />
@@ -146,7 +139,7 @@ class Header extends Component {
                 <i
                   className="fa fa-angle-down"
                   aria-hidden="true"
-                  onClick={() => this.setState({ menu: !this.state.menu })}
+                  onClick={() => setMenu(!menu)}
                   style={{
                     position: "relative",
                     top: 8,
@@ -154,7 +147,7 @@ class Header extends Component {
                     fontSize: 35,
                   }}
                 ></i>
-                {this.state.menu && this.state.authenticate && (
+                {menu && authenticate && (
                   <div className="drop-down">
                     <ul className="m-0 p-0 list-unstyled">
                       <li className="drop-down-items">
@@ -210,13 +203,12 @@ class Header extends Component {
           </div>
         </div>
         <Login
-          visible={this.state.login}
-          onCancel={() => this.setState({ login: false })}
+          visible={login}
+          onCancel={() => setLogin(false)}
         />
-        <SignUp show={this.state.signup} toggle={() => {}} />
+        <SignUp show={signup} toggle={() => setSignup(false)} />
       </div>
-    );
-  }
+  );
 }
-
+ 
 export default Header;

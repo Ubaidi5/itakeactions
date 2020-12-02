@@ -1,101 +1,131 @@
-import React, { Component } from "react";
+import React, { useReducer, useRef } from "react";
 import { ProgressBar } from "react-bootstrap";
 import MediaQuery from 'react-responsive';
 import { Redirect } from "react-router-dom";
 
 import "../../styles/report/report-form.css";
 
-class ReportForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      firstName: "",
-      lastName: "",
-      phne: "",
-      email: "",
-      schname: "",
-      state: "",
-      report: "",
-      filesList: [],
-      nameError: false,
-      lastNameError: false,
-      phoneError: false,
-      emailError: false,
-      schoolError: false,
-      stateError: false,
-      writeReportError: false
-    };
+const data = {
+  firstName: "",
+  lastName: "",
+  phne: "",
+  email: "",
+  schname: "",
+  state: "",
+  report: "",
+  filesList: [],
+  nameError: false,
+  lastNameError: false,
+  phoneError: false,
+  emailError: false,
+  schoolError: false,
+  stateError: false,
+  writeReportError: false
+}
+
+const reducer = (state=data, action) => {
+  switch(action.type) {
+    case "WRITE":
+      return {
+        ...state,
+        [action.key]: action.value
+      }
+    case "ADD_TO_FILE_LIST":
+      return {
+        ...state,
+        filesList: [...state.filesList, ...action.values]
+      }
+    default:
+      return state
   }
-  onChangeHandler(e) {
-    this.setState({ [e.target.name]: e.target.value });
+}
+
+const ReportForm = () => {
+  const [state, dispatch] = useReducer(reducer, data);
+  const file = useRef(null);
+
+
+  const onChangeHandler = e => {
+    dispatch({
+      type: "WRITE",
+      key: e.target.name,
+      value: e.target.value
+    });
   }
-  checkType(str) {
+  const checkType = str => {
     if (/\.(doc|docx|pdf|png|jpg)$/gi.test(str)) {
       return true;
     } else {
       return false;
     }
   }
-  handleFile(e) {
+  const handleFile = e => {
     e = e.target.files[0].name;
-    if (this.checkType(e)) {
-      this.setState({ fileName: e });
+    if (checkType(e)) {
+      dispatch({
+        type: "WRITE",
+        key: "fileName",
+        value: e
+      });
     } else {
-      alert("Allowed extensions doc, docx, pdf, png, jpg.");
+      window.alert("Allowed extensions doc, docx, pdf, png, jpg.");
     }
   }
-  handleFiles(e) {
+  const handleFiles = e => {
     e = e.target.files;
     const a = [];
     for (let i of e) {
-      if (!this.checkType(i.name)) {
-        alert("Allowed extensions doc, docx, pdf, png, jpg.");
+      if (!checkType(i.name)) {
+        window.alert("Allowed extensions doc, docx, pdf, png, jpg.");
       } else {
         a.push(i.name);
       }
     }
-    this.setState({ filesList: [...this.state.filesList, ...a] });
+    dispatch({
+      type: "ADD_TO_FILE_LIST",
+      values: a
+    });
   }
-  onSubmitHandler(e) {
+  const onSubmitHandler = e => {
     e.preventDefault();
     const errorsLog = {};
     if (
-      this.state.firstName === "" ||
-      this.state.firstName.length < 3 ||
-      this.state.firstName.length > 15
+      state.firstName === "" ||
+      state.firstName.length < 3 ||
+      state.firstName.length > 15
     ) {
       errorsLog.nameError = true;
     } else if (
-      this.state.lastName === "" ||
-      this.state.lastName.length < 3 ||
-      this.state.lastName.length > 15
+      state.lastName === "" ||
+      state.lastName.length < 3 ||
+      state.lastName.length > 15
     ) {
       errorsLog.lastNameError = true;
     } else if (
-      this.state.email.length < 150 ||
+      state.email.length < 150 ||
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/gi.test(
-        this.state.email
+        state.email
       )
     ) {
       errorsLog.emailError = true;
     } else if (
-      this.state.phne.length < 15 ||
+      state.phne.length < 15 ||
       /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/gi.test(
-        this.state.phne
+        state.phne
       )
     ) {
       errorsLog.phoneError = true;
-    } else if (this.state.state === "") {
+    } else if (state.state === "") {
       errorsLog.stateError = true;
     } else if (
-      this.state.schname < 3 ||
-      this.state.schname > 25 ||
-      this.state.schname.length === 0
+      state.schname < 3 ||
+      state.schname > 25 ||
+      state.schname.length === 0
     ) {
       errorsLog.schoolError = true;
     } else if (
-      this.state.report.length === 0 ||
-      this.state.fileName.length === 0
+      state.report.length === 0 ||
+      state.fileName.length === 0
     ) {
       errorsLog.writeReportError = true;
     } else if (Object.keys(errorsLog).length === 0) {
@@ -103,34 +133,34 @@ class ReportForm extends Component {
         <Redirect
           to={{
             path: "/report-submitted",
-            state: this.state
+            state: state
           }}
         />
       );
     }
   }
-  render() {
-    return (
-      <div>
+  
+  return (
+    <div>
         <br />
         <br />
         <h1>
           <u>Submit a Report</u>
         </h1>
         <h6>And Earn 15 ActBit coins</h6>
-        {(this.state.nameError ||
-          this.state.lastNameError ||
-          this.state.phoneError ||
-          this.state.emailError ||
-          this.state.schoolError ||
-          this.state.stateError ||
-          this.state.writeReportError) && (
+        {(state.nameError ||
+          state.lastNameError ||
+          state.phoneError ||
+          state.emailError ||
+          state.schoolError ||
+          state.stateError ||
+          state.writeReportError) && (
           <div className="alert alert-message" role="alert">
             <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>{" "}
             This is a danger alert—check it out!
           </div>
         )}
-        <form onSubmit={this.onSubmitHandler.bind(this)}>
+        <form onSubmit={onSubmitHandler}>
           <div className="form-row mobile-form-row">
             <div className="form-group col-md-6 mobile-form-row-col">
               <label>Name*</label>
@@ -138,9 +168,9 @@ class ReportForm extends Component {
                 type="text"
                 className="form-control"
                 name="firstName"
-                onChange={this.onChangeHandler.bind(this)}
+                onChange={onChangeHandler}
               />
-              {this.state.nameError && (
+              {state.nameError && (
                 <small style={{ color: "red" }}>
                   <i
                     className="fa fa-exclamation-triangle"
@@ -156,9 +186,9 @@ class ReportForm extends Component {
                 type="text"
                 className="form-control"
                 name="lastName"
-                onChange={this.onChangeHandler.bind(this)}
+                onChange={onChangeHandler}
               />
-              {this.state.lastNameError && (
+              {state.lastNameError && (
                 <small style={{ color: "red" }}>
                   <i
                     className="fa fa-exclamation-triangle"
@@ -175,9 +205,9 @@ class ReportForm extends Component {
               type="phone"
               className="form-control"
               name="phone"
-              onChange={this.onChangeHandler.bind(this)}
+              onChange={onChangeHandler}
             />
-            {this.state.phoneError && (
+            {state.phoneError && (
               <small style={{ color: "red" }}>
                 <i
                   className="fa fa-exclamation-triangle"
@@ -193,9 +223,9 @@ class ReportForm extends Component {
               type="email"
               className="form-control"
               name="email"
-              onChange={this.onChangeHandler.bind(this)}
+              onChange={onChangeHandler}
             />
-            {this.state.emailError && (
+            {state.emailError && (
               <small style={{ color: "red" }}>
                 <i
                   className="fa fa-exclamation-triangle"
@@ -211,9 +241,9 @@ class ReportForm extends Component {
               type="text"
               className="form-control"
               name="schname"
-              onChange={this.onChangeHandler.bind(this)}
+              onChange={onChangeHandler}
             />
-            {this.state.schoolError && (
+            {state.schoolError && (
               <small style={{ color: "red" }}>
                 <i
                   className="fa fa-exclamation-triangle"
@@ -228,9 +258,9 @@ class ReportForm extends Component {
             <select
               className="form-control"
               name="state"
-              onChange={this.onChangeHandler.bind(this)}
+              onChange={onChangeHandler}
             ></select>
-            {this.state.stateError && (
+            {state.stateError && (
               <small style={{ color: "red" }}>
                 <i
                   className="fa fa-exclamation-triangle"
@@ -248,8 +278,8 @@ class ReportForm extends Component {
               type="file"
               class="report-file"
               hidden
-              onChange={this.handleFile.bind(this)}
-              ref={e => (this.file = e)}
+              onChange={handleFile}
+              ref={file}
             />
             <div id="upload-report-section" style={{ display: "flex" }}>
               <div style={{ flex: 4 }}>
@@ -257,7 +287,7 @@ class ReportForm extends Component {
                   type="text"
                   readOnly
                   style={{ backgroundColor: "white" }}
-                  value={this.state.fileName}
+                  value={state.fileName}
                   className="form-control"
                 />
               </div>
@@ -266,7 +296,7 @@ class ReportForm extends Component {
                   className="btn" 
                   id="browse-button"
                   style={{ width: 120 }}
-                  onClick={() => this.file.click()}
+                  onClick={() => file.click()}
                 >
                   BROWSE
                 </button>
@@ -288,14 +318,14 @@ class ReportForm extends Component {
             <label className="text-muted">Detail Report</label>
             <textarea
               className="form-control"
-              value={this.state.report}
+              value={state.report}
               name="report"
               type="text"
-              onChange={this.onChangeHandler.bind(this)}
+              onChange={onChangeHandler}
               rows="8"
             ></textarea>
             <div style={{ textAlign: "center" }}>
-              {this.state.writeReportError && (
+              {state.writeReportError && (
                 <small style={{ color: "red" }}>
                   <i
                     className="fa fa-exclamation-triangle"
@@ -316,17 +346,17 @@ class ReportForm extends Component {
               type="file"
               hidden
               multiple
-              ref={e => (this.files = e)}
-              onChange={this.handleFiles.bind(this)}
+              ref={e => (files = e)}
+              onChange={handleFiles}
             />
-            <div className="drag-n-drop" onClick={() => this.files.click()}>
-              {this.state.filesList.length === 0 ? (
+            <div className="drag-n-drop" onClick={() => files.click()}>
+              {state.filesList.length === 0 ? (
                 <i
                   className="fa fa-cloud-upload upload-file"
                   aria-hidden="true"
                 ></i>
               ) : (
-                this.state.filesList.map((e,i) => <div key={i} className="display-files">
+                state.filesList.map((e,i) => <div key={i} className="display-files">
                   <i className="fa fa-file-pdf-o" aria-hidden="true"></i> <p className='file-name'>{e}</p>
                   <ProgressBar now={100} className='upload-progress-bar' variant="success" />
                 </div>)
@@ -354,8 +384,7 @@ class ReportForm extends Component {
                     </div>
         </MediaQuery>
       </div>
-    );
-  }
+  );
 }
-
+ 
 export default ReportForm;

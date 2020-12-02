@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import "../../styles/reward/reward-cards.css";
 import MediaQuery from "react-responsive";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
-const RewardCards = (props) => {
+const RewardCards = props => {
   const { title, slug, image, drawDate } = props;
   return (
     <div>

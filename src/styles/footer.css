@@ -35,13 +35,13 @@
 .footer2{ height: 7vh; background-color: #60AB30; display: flex; justify-content: center; align-items: center; }
 .footer2 a{ color: white; text-decoration: none; margin: 10px;}
 
-.ad{flex: 36%; text-align: center;}                     /*---- Tag Line ----*/
+.ad{flex: 36%; text-align: center; font-size: 20px;}                     /*---- Tag Line ----*/
 
 .auth-link{flex: 32%; text-align: right;}               /*---- Links ----*/
 
 .follow-us{display: flex; justify-content: center; align-items: center;}        /*--- Social Links ---*/
 .follow{flex: 32%;}
-.fa-links a{ font-size: 20px; }
+.fa-links a{ font-size: 30px; }
 .responsive-ad{display: none;}
 
 

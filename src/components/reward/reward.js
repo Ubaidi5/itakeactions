@@ -6,8 +6,7 @@ import { Row, Col } from "antd";
 
 const baseURL = process.env.REACT_APP_BASE_URL_API;
 
-function Rewards(props) {
-  console.log("All Rewards", props.allRewards.rewards);
+const Rewards = props => {
   return (
     <div className="rewards">
       {/* <DropdownMenu /> */}

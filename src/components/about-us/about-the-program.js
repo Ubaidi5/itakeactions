@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../../styles/about-us/about-the-program.css'
 
-class AboutTheProgram extends Component {
-
-    render() { 
-        return ( 
-            <div className="about-the-program">
+const AboutTheProgram = () => {
+    return (
+        <div className="about-the-program">
                 <h1 className="about-heading">About the program</h1>
                 <hr id='about-heading-divider'/>
                 <iframe title="I Take Actions" src="https://www.youtube.com/embed/5NQrNJrU3Vo" frameBorder='0' id='vedio-frame' width='800px' height='450px' style={{paddingBottom: 25}}></iframe>
@@ -18,8 +16,7 @@ class AboutTheProgram extends Component {
                     and free gifts available on the platform
                 </p>
             </div>
-         );
-    }           
+    );
 }
  
-export default AboutTheProgram;         
+export default AboutTheProgram;

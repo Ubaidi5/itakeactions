@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "../../../styles/reward/rewards-individual-page.css";
 import TweetCard from "../../cards/tweetCard";
 import RewardDescription from "./reward-description";
@@ -7,7 +7,7 @@ import { Row, Col } from "antd";
 
 const baseURL = process.env.REACT_APP_BASE_URL_API;
 
-const RewardsIndividualPage = (props) => {
+const RewardsIndividualPage = props => {
   const { data } = props;
   return (
     <Row className="rewards-individual-page" id="t" justify="space-between">
@@ -61,7 +61,7 @@ const RewardsIndividualPage = (props) => {
               margin: "auto",
               background: "#343434",
               height: 3,
-              marginBottom: 24,
+              marginBottom: 24
             }}
           />
           {/* Mapping Tweets */}
