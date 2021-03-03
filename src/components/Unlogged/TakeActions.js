@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../../styles/home/section5.css';
+// import '../../styles/home/section5.css';
 
 function TakeActions(props) {
   return (
@@ -44,19 +44,21 @@ function TakeActions(props) {
         </p>
         <button className="btn tweet">TWEET NOW</button>
       </div>
-      {!props.display && <div className="icon-box offset-sm-1 col-sm-3 bg-light actions rest-actions">
-        <img
-          src={require("./images/tweet-icon-green.png")}
-          alt=""
-          className="icon"
-        />
-        <h3>Tweet</h3>
-        <p>
-          Thank president Muhammadu Buhari for deducting from Paris Club Refund
-          to... <Link>Read more</Link>
-        </p>
-        <button className="btn tweet">TWEET NOW</button>
-      </div>}
+      {!props.display && (
+        <div className="icon-box offset-sm-1 col-sm-3 bg-light actions rest-actions">
+          <img
+            src={require("./images/tweet-icon-green.png")}
+            alt=""
+            className="icon"
+          />
+          <h3>Tweet</h3>
+          <p>
+            Thank president Muhammadu Buhari for deducting from Paris Club
+            Refund to... <Link>Read more</Link>
+          </p>
+          <button className="btn tweet">TWEET NOW</button>
+        </div>
+      )}
     </div>
   );
 }

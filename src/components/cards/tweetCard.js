@@ -15,6 +15,7 @@ const TweetCard = (props) => {
         padding: "20px",
         borderRadius: 24,
         backgroundColor: "#fff",
+        textAlign: "center",
       }}
     >
       <img
